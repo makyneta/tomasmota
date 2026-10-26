@@ -6,6 +6,12 @@
 
     /* ── Projects data ── */
     const projects = [
+      { id:18, title:"Esdras Lopes", type:"frontend",
+        img:"/assets/images/projects/dev/esdras-lopes.webp",
+        desc:"Website de vendas para o influenciador, Esdras Lopes.",
+        demo:"https://makyneta.github.io/esdras",
+        info:"/dev/esdras" },
+
       { id:17, title:"Victor Campos", type:"frontend",
         img:"/assets/images/projects/dev/victor-campos.webp",
         desc:"Website de vendas para o influenciador, Victor Campos.",

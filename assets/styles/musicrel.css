@@ -1,0 +1,62 @@
+/* =========================================================
+   TEMPLATE DE LANÇAMENTO — /assets/styles/lancamento.css
+   (carregar depois do style.css: usa as variáveis --h e --navy)
+   ========================================================= */
+
+/* Fundo em imagem */
+.rel-bg{position:fixed;inset:0;z-index:-1;background:var(--bg-img,none) center/cover no-repeat,linear-gradient(180deg,#5d92c4,#2f5d8c);background-color:#3f74a6}
+.rel-bg::after{content:"";position:absolute;inset:0;background:rgba(5,20,40,.28)}
+
+.rel-main{flex:1;padding:calc(var(--h) + 48px) 0 110px;color:#fff}
+.rel-wrap{width:min(1030px,92%);margin-inline:auto}
+
+.rel-back{display:inline-block;margin-bottom:36px;font-size:.8rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.3);transition:transform .2s}
+.rel-back:hover{transform:translateX(-4px)}
+
+/* Capa + informação */
+.rel-top{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:56px;align-items:start}
+
+.rel-cover{position:relative;aspect-ratio:1;overflow:hidden;background:linear-gradient(135deg,#17406e,#0b2a4d);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.rel-cover::before{content:"THS";position:absolute;inset:0;display:grid;place-items:center;font-family:'Oswald',sans-serif;font-size:2rem;letter-spacing:.3em;text-indent:.3em;color:rgba(255,255,255,.3)}
+.rel-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.rel-kicker{font-size:.82rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;opacity:.9}
+.rel-title{margin-top:12px;font-family:'Inter',sans-serif;font-weight:400;font-size:clamp(1.6rem,3.2vw,2.6rem);line-height:1.2;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+
+.rel-about{margin-top:28px}
+.rel-about p{font-size:1rem;line-height:1.8;margin-bottom:14px;text-shadow:0 1px 10px rgba(0,0,0,.2)}
+
+/* Ouvir + videoclipe (opcional: sem links, o bloco desaparece) */
+.rel-listen{margin-top:32px}
+.rel-listen:not(:has(a)){display:none}
+.rel-sub{margin-bottom:14px;font-family:'Inter',sans-serif;font-weight:500;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase}
+.rel-links{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid #fff;color:#fff;font-size:.8rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;line-height:1;transition:background .25s,color .25s}
+.rel-link i{font-size:1.05rem}
+.rel-link:hover,.rel-link:focus-visible{background:#fff;color:var(--navy)}
+.rel-link:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.rel-link-video{background:#fff;color:var(--navy)}
+.rel-link-video:hover,.rel-link-video:focus-visible{background:transparent;color:#fff}
+
+/* Ficha técnica */
+.rel-facts{margin-top:30px;border-top:1px solid rgba(255,255,255,.55)}
+.rel-facts>div{display:flex;justify-content:space-between;gap:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.55);font-size:.88rem}
+.rel-facts dt{font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;padding-top:2px}
+.rel-facts dd{text-align:right}
+
+/* Letra */
+.rel-lyrics{margin-top:96px}
+.rel-heading{font-family:'Inter',sans-serif;font-weight:400;font-size:clamp(1.3rem,2.4vw,1.8rem);letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.lyrics{max-width:680px;margin:48px auto 0;padding:48px 40px;background:rgba(7,26,51,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);text-align:center}
+.lyrics p{font-size:1.05rem;line-height:1.95;margin-bottom:32px}
+.lyrics p:last-child{margin-bottom:0}
+.lyrics-part{display:block;margin-bottom:10px;font-size:.74rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#8fc0e8}
+
+@media(max-width:860px){
+  .rel-main{padding-top:calc(var(--h) + 32px)}
+  .rel-top{grid-template-columns:1fr;gap:36px}
+  .rel-cover{max-width:460px;width:100%;margin-inline:auto}
+  .rel-lyrics{margin-top:72px}
+  .lyrics{padding:36px 22px;margin-top:36px}
+}
+@media(prefers-reduced-motion:reduce){.rel-back,.rel-link{transition:none}}

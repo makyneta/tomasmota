@@ -176,13 +176,13 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   const VIEW_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>`;
 
   const devData = [
+    { title:"Esdras Lopes", desc:"Website para o estudante e músico, Esdras Lopes.", tags:["HTML","CSS","JS"],
+      img:"/assets/images/projects/dev/esdras-lopes.webp",
+      demo:"https://makyneta.github.io/esdras", info:"/dev/esdras" },
+
     { title:"Victor Campos", desc:"Website para o influenciador, Victor Campos.", tags:["HTML","CSS","JS"],
       img:"/assets/images/projects/dev/victor-campos.webp",
       demo:"https://makyneta.github.io/victor", info:"/dev/victor" },
-
-    { title:"Nicholas Moraes", desc:"Website portfólio para o influenciador e músico, Nicholas Moraes.", tags:["HTML","CSS","JS"],
-      img:"/assets/images/projects/dev/nicholas-moraes.webp",
-      demo:"https://makyneta.github.io/m0rwes", info:"dev/m0rwes" },
 
     { title:"Clube Atletismo de Marinha Grande", desc:"Website para o Clube Atletismo de Marinha Grande.", tags:["HTML","CSS","JS"],
       img:"/assets/images/projects/dev/clube-atletismo-de-marinha-grande.webp",

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Metadados -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="All releases by Makyneta.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/styles/music.css">
+    <link rel="stylesheet" href="/assets/styles/musicrel.css">
+    <link rel="stylesheet" href="/assets/styles/releases.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="/assets/scripts/music-main.js" defer></script>
+    <script src="/assets/scripts/releases.js" defer></script>
+
+    <!-- Favicon, OGImage, Title -->
+    <link rel="icon" href="/favicon.png">
+    <title>Releases | Makyneta</title>
+</head>
+
+<body class="releases-page">
+    <div id="site-header"></div>
+
+    <!-- Imagem de fundo da página (muda o caminho se quiseres outra) -->
+    <div class="releases-bg" style="--bg-img:url(/assets/images/music/background.webp)" aria-hidden="true"></div>
+
+    <main class="releases-main">
+        <div class="releases-wrap">
+            <h1 class="releases-title">Releases</h1>
+            <p class="releases-sub">New music, available on all paltforms</p>
+
+            <!-- Preenchido automaticamente pelo lancamentos.js (lista RELEASES no ficheiro releases-data.js) -->
+            <div class="releases-grid" id="releases-grid"></div>
+
+            <p class="releases-empty" id="releases-empty" hidden>There is no releases.</p>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+</body>
+
+</html>
