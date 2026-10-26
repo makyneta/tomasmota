@@ -18,7 +18,9 @@
   const SOCIALS = [
     ["instagram", "Instagram", "/instagram"],
     ["facebook-f", "Facebook", "/facebook"],
+    ["linkedin", "LinkedIn", "/linkedin"],
     ["youtube", "YouTube", "/youtube"],
+    ["google", "Google", "/google"],
     ["spotify", "Spotify", "/spotify"],
   ];
   const socialHTML = SOCIALS.map(([i, n, u]) => `<a href="${u}" target="_blank" rel="noopener" aria-label="${n}"><i class="fa-brands fa-${i}"></i></a>`).join("");
