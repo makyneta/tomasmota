@@ -42,7 +42,7 @@
         <a class="ck-link" href="legal/cookies-policy">&#8594; See cookie policy</a>
       </div>
       <div class="ck-status" id="cookie-status">
-        <span class="dot"></span> estado: awaiting decision
+        <span class="dot"></span> status: awaiting decision
       </div>
       <div class="ck-actions">
         <button id="cookie-reject" class="ck-btn reject">recuse</button>
