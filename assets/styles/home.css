@@ -839,7 +839,7 @@
     .cesario-popup-card {
       position: relative; display: flex; align-items: flex-end;
       width: min(760px, 100%); min-height: 460px; aspect-ratio: 16 / 10; overflow: hidden;
-      background-image: linear-gradient(0deg, rgba(5,7,9,.97) 0%, rgba(5,7,9,.76) 30%, rgba(5,7,9,.04) 72%), url('/assets/images/memory/cesario-silva.webp');
+      background-image: linear-gradient(0deg, rgba(5,7,9,.97) 0%, rgba(5,7,9,.76) 30%, rgba(5,7,9,.04) 72%), url('/assets/images/richard-x-tomas.png');
       background-size: cover; background-position: center;
       border: 1px solid var(--brd2);
       box-shadow: 0 30px 100px rgba(0,0,0,.65), 0 0 50px rgba(0,255,136,.07);
@@ -853,7 +853,8 @@
       letter-spacing: .2em; text-transform: uppercase;
     }
     .cesario-popup-kicker::before { content: ''; display: inline-block; width: 22px; height: 1px; margin: 0 .7rem .2rem 0; background: var(--grn); }
-    .cesario-popup-content h2 { color: var(--white); font-family: var(--fd); font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: .92; letter-spacing: .02em; }
+    /* .cesario-popup-content h2 { color: var(--white); font-family: var(--fd); font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: .92; letter-spacing: .02em; } */
+    .cesario-popup-content h2 { color: var(--white); font-family: var(--fd); font-size: clamp(1.6rem, 3vw, 2.8rem); line-height: .92; letter-spacing: .02em; }
     .cesario-popup-content p { max-width: 270px; margin: 1.2rem 0 2rem; color: var(--w2); font-family: var(--fmh); font-size: .65rem; line-height: 1.8; }
     .cesario-popup-cta {
       display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; width: fit-content;

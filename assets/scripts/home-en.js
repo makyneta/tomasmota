@@ -4,6 +4,60 @@ window.addEventListener('scroll', () => {
     Math.min(window.scrollY / (document.documentElement.scrollHeight - innerHeight) * 100, 100) + '%';
 });
 
+/* ── Popup ── */
+/* ── Popup ── */
+(function(){
+  const popup = document.getElementById('cesario-popup');
+  if (!popup) return;
+
+  const closeButton = popup.querySelector('.cesario-popup-close');
+  const cta = popup.querySelector('.cesario-popup-cta');
+  let lastFocusedElement;
+
+  function closePopup(){
+    popup.classList.remove('open');
+    popup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }
+
+  function openPopup(){
+    lastFocusedElement = document.activeElement;
+    popup.classList.add('open');
+    popup.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (closeButton) closeButton.focus();
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', closePopup);
+  }
+
+  popup.addEventListener('click', event => {
+    if (event.target === popup) closePopup();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && popup.classList.contains('open')) closePopup();
+  });
+
+  if (cta) {
+    cta.addEventListener('click', () => { 
+      document.body.style.overflow = ''; 
+    });
+  }
+
+  function schedulePopup(){
+    window.setTimeout(openPopup, 2800);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', schedulePopup, { once: true });
+  } else {
+    schedulePopup();
+  }
+})();
+
 /* ── Reveal ── */
 const ro = new IntersectionObserver(
   entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
@@ -134,15 +188,15 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   const devData = [
     { title:"Esdras Lopes", desc:"Website for the student and musician, Esdras Lopes.", tags:["HTML","CSS","JS"],
       img:"/assets/images/projects/dev/esdras-lopes.webp",
-      demo:"https://makyneta.github.io/esdras", info:"/en/dev/esdras" },
+      demo:"https://makyneta.github.io/esdras", info:"/dev/esdras" },
 
     { title:"Victor Campos", desc:"Website for the influencer, Victor Campos.", tags:["HTML","CSS","JS"],
       img:"/assets/images/projects/dev/victor-campos.webp",
-      demo:"https://makyneta.github.io/victor", info:"/en/dev/victor" },
+      demo:"https://makyneta.github.io/victor", info:"/dev/victor" },
 
     { title:"Clube Atletismo de Marinha Grande", desc:"Website for the Marinha Grande Athletics Club.", tags:["HTML","CSS","JS"],
       img:"/assets/images/projects/dev/clube-atletismo-de-marinha-grande.webp",
-      demo:"https://www.catletismomg.pt", info:"/en/dev/camg" },
+      demo:"https://www.catletismomg.pt", info:"/dev/camg" },
   ];
 
   const photoData = [

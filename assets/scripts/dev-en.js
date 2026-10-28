@@ -10,25 +10,25 @@
         img:"/assets/images/projects/dev/esdras-lopes.webp",
         desc:"Website de vendas para o influenciador, Esdras Lopes.",
         demo:"https://makyneta.github.io/esdras",
-        info:"/en/dev/esdras" },
+        info:"/dev/esdras" },
 
         { id:17, title:"Victor Campos", type:"frontend",
         img:"/assets/images/projects/dev/victor-campos.webp",
         desc:"Sell website for the influencer, Victor Campos.",
         demo:"https://makyneta.github.io/victor",
-        info:"/en/dev/victor" },
+        info:"/dev/victor" },
 
       { id:16, title:"Math For Teens", type:"fullstack",
         img:"/assets/images/projects/dev/math-for-teens.webp",
         desc:"Educational website for teaching mathematics to teenagers.",
         demo:"https://mathforteens.pt",
-        info:"/en/dev/mathforteens" },
+        info:"/dev/mathforteens" },
 
       { id:15, title:"Nicholas Moraes", type:"frontend",
         img:"/assets/images/projects/dev/nicholas-moraes.webp",
         desc:"Professional and minimalist website for influencer and musician, Nicholas Moraes.",
         demo:"https://makyneta.github.io/m0rwes",
-        info:"/en/dev/m0rwes" },
+        info:"/dev/m0rwes" },
 
       { id:14, title:"Libélula Teatro", type:"frontend",
         img:"/assets/images/projects/dev/libelula-teatro.webp",
@@ -40,19 +40,19 @@
         img:"/assets/images/projects/dev/mr-devix.webp",
         desc:"Personal brand portfolio for a digital creator. Minimalist design with smooth scroll animations and a dark theme.",
         demo:"https://makyneta.github.io/mrdevix",
-        info:"/en/dev/mrdevix" },
+        info:"/dev/mrdevix" },
 
       { id:12, title:"Clube Atletismo de Marinha Grande", type:"fullstack",
         img:"/assets/images/projects/dev/clube-atletismo-de-marinha-grande.webp",
         desc:"Institutional website for an athletics club featuring event calendars, athlete profiles, and news sections.",
         demo:"https://makyneta.github.io/catletismomg",
-        info:"/en/dev/camg" },
+        info:"/dev/camg" },
 
       { id:11, title:"Nicholas Simões", type:"frontend",
         img:"/assets/images/projects/dev/nicholas-simoes.webp",
         desc:"Personal website for a photographer and videographer, featuring a masonry gallery and lightbox viewer.",
         demo:"https://makyneta.github.io/nico",
-        info:"/en/dev/nico" },
+        info:"/dev/nico" },
 
       { id:10, title:"Juventude Socialista Marinha Grande", type:"frontend",
         img:"/assets/images/projects/dev/js-marinhagrande.webp",
@@ -64,7 +64,7 @@
         img:"/assets/images/projects/dev/mayday.webp",
         desc:"Event landing page with countdown timer, artist lineup, ticket purchase flow, and venue info.",
         demo:"https://makyneta.github.io/mayday",
-        info:"/en/dev/mayday" },
+        info:"/dev/mayday" },
 
       { id:8, title:"Amalias", type:"frontend",
         img:"/assets/images/projects/dev/amalias.webp",
@@ -106,13 +106,13 @@
         img:"/assets/images/projects/dev/ice-j.webp",
         desc:"Music promotional site with embedded tracks, lyric pages, merch store, and tour schedule.",
         demo:"https://makyneta.github.io/icejiloveyou",
-        info:"/en/dev/icej" },
+        info:"/dev/icej" },
 
       { id:1, title:"Tiago Pedro", type:"frontend",
         img:"/assets/images/projects/dev/tiago-pedro.webp",
         desc:"Personal CV website with skills timeline, project portfolio, and a downloadable resume in PDF.",
         demo:"https://makyneta.github.io/tiagopedro",
-        info:"/en/dev/tiagopedro" },
+        info:"/dev/tiagopedro" },
     ];
 
     /* ── Build cards ── */

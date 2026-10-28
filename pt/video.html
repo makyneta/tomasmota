@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
+  <!-- Metadados -->
   <meta charset="UTF-8">
-  <title>Video | Makyneta by Tomás Mota</title>
-  <meta name="description" content="Portfolio of video production by Makyneta. Coverage of events, commercial videos and documentaries.">
+  <title>Vídeo | Makyneta by Tomás Mota</title>
+  <meta name="description" content="Portfolio de produção de vídeo pela Makyneta. Cobertura de eventos, vídeos comerciais e documentários.">
   <link rel="canonical" href="https://makyneta.github.io/video">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Video | Makyneta by Tomás Mota">
-  <meta property="og:description" content="Portfolio of video production by Makyneta. Coverage of events, commercial videos and documentaries.">
+  <meta property="og:title" content="Vídeo | Makyneta by Tomás Mota">
+  <meta property="og:description" content="Portfolio de produção de vídeo pela Makyneta. Cobertura de eventos, vídeos comerciais e documentários.">
   <meta property="og:url" content="https://makyneta.github.io/video">
   <meta property="og:image" content="https://makyneta.github.io/assets/images/ui/og-image.webp">
   <meta property="og:site_name" content="Makyneta">
@@ -21,8 +22,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Video | Makyneta by Tomás Mota">
-  <meta name="twitter:description" content="Portfolio of video production by Makyneta. Coverage of events, commercial videos and documentaries.">
+  <meta name="twitter:title" content="Vídeo | Makyneta by Tomás Mota">
+  <meta name="twitter:description" content="Portfolio de produção de vídeo pela Makyneta. Cobertura de eventos, vídeos comerciais e documentários.">
   <meta name="twitter:image" content="https://makyneta.github.io/assets/images/ui/og-image.webp">
 
   <!-- JSON-LD Structured Data -->
@@ -133,7 +134,7 @@
     }
   }
 ]
-</script>
+  </script>
 
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -147,7 +148,7 @@
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/assets/scripts/video.js" defer></script>
-  <script src="/assets/scripts/scripten.js"></script>
+  <script src="/assets/scripts/script.js"></script>
   
   <!-- Favicon -->
   <link rel="icon" href="/favicon-black.ico" type="image/x-icon" media="(prefers-color-scheme: light)">
@@ -159,13 +160,13 @@
 
   <main>
     <section id="page-hero">
-      <div class="hero-ghost">VIDEO</div>
-      <div class="eyebrow"><span>Portfolio — VVideo</span></div>
-      <h1 class="hero-title">VIDEO<span class="outline"></span></h1>
+      <div class="hero-ghost">VÍDEO</div>
+      <div class="eyebrow"><span>Portfólio — Vídeo</span></div>
+      <h1 class="hero-title">VÍDEO<span class="outline"></span></h1>
       <div class="hero-foot">
         <p class="hero-lead">
-          Movement, editing and short content — from event coverage
-          to visual narratives.
+          Movimento, edição e conteúdo curto — desde cobertura de eventos
+          até narrativas visuais.
         </p>
       </div>
     </section>
@@ -180,8 +181,8 @@
   <script>
     const VIDEOS = [
   {
-    title: 'Presentation of Ricardo Lopes\' Candidacy',
-    desc: 'Video presentation of Ricardo Lopes\' candidacy to the Political Commission of the PS in Marinha Grande.',
+    title: 'Apresentação da Candidatura de Ricardo Lopes',
+    desc: 'Vídeo de apresentação da candidatura de Ricardo Lopes à Comissão Política do PS da Marinha Grande.',
     client: 'PS Marinha Grande',
     embed: 'https://www.youtube.com/embed/Igmi2JkPEwk',
     thumbnail: '/assets/images/projects/video/psmg-apricardolopes.webp',
@@ -190,7 +191,7 @@
 
   {
     title: 'Neuton Marques @ Todos pela Marinha',
-    desc: 'Video of Neuton Marques\' live performance at the "Todos pela Marinha" event.',
+    desc: 'Vídeo da atuação ao vivo de Neuton Marques no evento "Todos pela Marinha".',
     client: 'CM Marinha Grande & Neuton Marques',
     embed: 'https://www.youtube.com/embed/CCtTfm1G7jc',
     thumbnail: '/assets/images/projects/video/cmmg-neutonmarques.webp',
@@ -198,8 +199,8 @@
   },
 
   {
-    title: 'Artificial Intelligence in Education',
-    desc: 'Reportage on the use of Artificial Intelligence in Education, conducted as a Professional Aptitude Project, for the completion of the 12th grade.',
+    title: 'A Inteligência Artificial no Ensino',
+    desc: 'Reportagem sobre a Inteligência Artificial no Ensino, realizada como Projeto de Aptidão Profissional, para a conclusão do 12º ano.',
     client: 'AE Marinha Grande Poente',
     embed: 'https://www.youtube.com/embed/pQgIhACiPts',
     thumbnail: '/assets/images/projects/video/aemgp-iaensino.webp',
@@ -225,7 +226,7 @@
             ${v.client ? `<div class="v-client">${v.client}</div>` : ''}
             <div class="v-title">${v.title}</div>
             ${v.desc ? `<div class="v-desc">${v.desc}</div>` : ''}
-            <span class="v-link">View project →</span>
+            <span class="v-link">Ver projeto →</span>
           </div>
         </a>
       `).join('');
