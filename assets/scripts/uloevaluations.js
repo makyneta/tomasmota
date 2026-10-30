@@ -1,13 +1,13 @@
 var assessments = [
-  { date: '2026-10-06', subject: 'COMTI', regime: 'EaD' },
+  /* { date: '2026-10-06', subject: 'COMTI', regime: 'EaD' },
   
   { date: '2026-10-28', subject: 'IAPSI', regime: 'TP' },
   
   { date: '2026-10-29', subject: 'FMAT', regime: 'TP2' },
   
-  { date: '2026-10-30', subject: 'FMAT', regime: 'TP1' },
+  { date: '2026-10-30', subject: 'FMAT', regime: 'TP1' }, */
   
-  { date: '2026-10-30', subject: 'IAPSI', regime: 'EaD' },
+  { date: '2026-10-30', subject: 'IAPSI', regime: 'EaD' }, 
   
   { date: '2026-11-02', subject: 'COMTI', regime: 'PL2' },
   
