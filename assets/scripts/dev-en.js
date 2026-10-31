@@ -8,13 +8,13 @@
     const projects = [
       { id:15, title:"Esdras Lopes", type:"frontend",
         img:"/assets/images/projects/dev/esdras-lopes.webp",
-        desc:"Website de vendas para o influenciador, Esdras Lopes.",
+        desc:"A focused sales website for influencer Esdras Lopes.",
         demo:"https://makyneta.github.io/esdras",
         info:"/dev/esdras" },
 
       { id:14, title:"Victor Campos", type:"frontend",
         img:"/assets/images/projects/dev/victor-campos.webp",
-        desc:"Sell website for the influencer, Victor Campos.",
+        desc:"A personal website and digital storefront for influencer Victor Campos.",
         demo:"https://makyneta.github.io/victor",
         info:"/dev/victor" },
 
@@ -26,13 +26,13 @@
 
       { id:12, title:"Nicholas Moraes", type:"frontend",
         img:"/assets/images/projects/dev/nicholas-moraes.webp",
-        desc:"Professional and minimalist website for influencer and musician, Nicholas Moraes.",
+        desc:"A refined personal website for influencer and musician Nicholas Moraes.",
         demo:"https://makyneta.github.io/m0rwes",
         info:"/dev/m0rwes" },
 
       { id:11, title:"Libélula Teatro", type:"frontend",
         img:"/assets/images/projects/dev/libelula-teatro.webp",
-        desc:"Professional and minimalist website for the theater company Libélula Teatro.",
+        desc:"A digital home for Libélula Teatro, bringing its productions and company story together.",
         demo:"https://libelulateatro.lovable.app",
         info:"" },
 
@@ -56,7 +56,7 @@
 
       { id:7, title:"Juventude Socialista Marinha Grande", type:"frontend",
         img:"/assets/images/projects/dev/js-marinhagrande.webp",
-        desc:"Political youth movement website with event promotion, manifesto pages, and membership sign-up forms.",
+        desc:"An information hub for the youth movement, with events, manifesto pages and membership sign-up.",
         demo:"https://makyneta.github.io/jsmarinhagrande",
         info:"" },
 
@@ -68,31 +68,31 @@
 
       { id:5, title:"Amalias", type:"frontend",
         img:"/assets/images/projects/dev/amalias.webp",
-        desc:"Brand website for a local restaurant. Includes a digital menu, location map, and reservation system.",
+        desc:"A restaurant website bringing together its menu, location and reservation information.",
         demo:"https://makyneta.github.io/amalias",
         info:"" },
 
       { id:4, title:"LS Videomaker", type:"frontend",
         img:"/assets/images/projects/dev/ls-videomaker.webp",
-        desc:"Video production portfolio with a video gallery, client showcase, and contact form for bookings.",
+        desc:"A video production portfolio with selected work, client projects and booking enquiries.",
         demo:"https://makyneta.github.io/lsvideomaker",
         info:"" },
 
       { id:3, title:"Nickz", type:"frontend",
         img:"/assets/images/projects/dev/nickz.webp",
-        desc:"Personal brand site for a musician, featuring discography, tour dates, and a media gallery.",
+        desc:"A musician’s online home for releases, live dates and selected media.",
         demo:"https://makyneta.github.io/nickz",
         info:"" },
 
       { id:2, title:"Francisco Ferreira", type:"frontend",
         img:"/assets/images/projects/dev/francisco-ferreira.webp",
-        desc:"Professional portfolio for a creative director, showcasing brand identity projects and case studies.",
+        desc:"A portfolio for a creative director, presenting identity work and selected projects.",
         demo:"https://makyneta.github.io/franciscoferreira",
         info:"" },
 
       { id:1, title:"Tiago Pedro", type:"frontend",
         img:"/assets/images/projects/dev/tiago-pedro.webp",
-        desc:"Personal CV website with skills timeline, project portfolio, and a downloadable resume in PDF.",
+        desc:"A personal CV and portfolio with a skills timeline and downloadable résumé.",
         demo:"https://makyneta.github.io/tiagopedro",
         info:"/dev/tiagopedro" },
     ];
@@ -106,8 +106,7 @@
 
       const imgHtml = p.img
         ? `<div class="card-img-wrap">
-             <div class="card-img-overlay"></div>
-             <img src="${p.img}" alt="${p.title}" loading="lazy"/>
+             <img src="${p.img}" alt="Website project: ${p.title}" loading="lazy"/>
              <span class="card-lang-badge" style="background:${col}">${BADGE[p.type]}</span>
            </div>`
         : `<div class="card-img-wrap no-img">
@@ -127,13 +126,10 @@
             <div class="card-title-wrap">
               <h3 class="card-title">${p.title}</h3>
             </div>
-            <!--  <div class="card-desc">
-              <div class="desc-label">// description</div>
-              <p class="desc-text">${p.desc}</p>
-            </div> -->
+            <p class="card-desc">${p.desc}</p>
             <div class="card-actions">
-              ${p.info ? `<a href="${p.info}" class="card-btn"><i class="fa-solid fa-circle-info"></i> Info</a>` : ''}
-              <a href="${p.demo}" target="_blank" rel="noopener" class="card-btn">${EXT} Visit</a>
+              ${p.info ? `<a href="${p.info}" class="card-btn">Project details <span aria-hidden="true">↗</span></a>` : ''}
+              <a href="${p.demo}" target="_blank" rel="noopener" class="card-btn">Visit website ${EXT}</a>
             </div>
           </div>
         </div>
@@ -152,6 +148,10 @@
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        filterBtns.forEach(b => {
+          if (b !== btn) b.setAttribute('aria-pressed', 'false');
+        });
         const f = btn.dataset.filter;
         let n = 0;
         document.querySelectorAll('.project-card').forEach(card => {
@@ -160,29 +160,9 @@
           if (show) { n++; card.classList.add('card-visible'); }
         });
         countNum.textContent = n;
-        countLbl.textContent = n === 1 ? 'project indexed' : 'projects indexed';
+        countLbl.textContent = n === 1 ? 'project' : 'projects';
       });
     });
-
-    /* ── Card stagger entrance ── */
-    const cardObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const cards = e.target.querySelectorAll('.project-card');
-          cards.forEach((c, i) => {
-            setTimeout(() => c.classList.add('card-visible'), i * 60);
-          });
-          cardObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.03 });
-    cardObs.observe(document.getElementById('projects-grid'));
-
-    /* ── Section reveal ── */
-    const sectionObs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.04 });
-    document.querySelectorAll('.reveal').forEach(el => sectionObs.observe(el));
 
     /* ── Progress bar ── */
     window.addEventListener('scroll', () => {

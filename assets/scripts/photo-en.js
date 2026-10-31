@@ -106,114 +106,79 @@ const PROJECTS = [
 ];
 
 const CATS = [
-  {id:'all',label:'All'},{id:'event',label:'Event'},{id:'sport',label:'Sports'},
-  {id:'portrait',label:'Portrait'},{id:'street',label:'Street'},{id:'nature',label:'Nature'},
-  {id:'session',label:'Session'},{id:'theater',label:'Theater'},
+  { id: 'all', label: 'All work' },
+  { id: 'event', label: 'Events' },
+  { id: 'sport', label: 'Sport' },
+  { id: 'theater', label: 'Theatre' },
+  { id: 'session', label: 'Portraits & sessions' },
 ];
 
-/* Hero terminal typewriter */
-(function(){
-  const el = document.getElementById('typecmd');
-  if(!el) return;
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const cmd = 'open ./portfolio --live';
-  if(prefersReduced){ el.textContent = cmd; return; }
-  let i = 0;
-  (function type(){
-    if(i <= cmd.length){
-      el.textContent = cmd.slice(0, i);
-      i++;
-      setTimeout(type, 38);
-    }
-  })();
-})();
+const availableCategories = new Set(PROJECTS.map(project => project.category));
+const filterContainer = document.getElementById('ftabs');
+const projectGrid = document.getElementById('grid');
+const projectCount = document.getElementById('vc');
 
-/* Ticker */
-(function(){
-  const items = PROJECTS.map(p=>
-    `<span class="tk-item"><em>${p.category.toUpperCase()}</em><span class="tk-dot"></span>${p.title}<span class="tk-dot"></span>${p.year}</span>`
-  ).join('');
-  const t = document.getElementById('tt');
-  t.innerHTML = items+items;
-})();
-
-/* Tabs */
-(function(){
-  const avail = new Set(PROJECTS.map(p=>p.category));
-  const c = document.getElementById('ftabs');
-  CATS.forEach(cat=>{
-    if(cat.id!=='all'&&!avail.has(cat.id)) return;
-    const b = document.createElement('button');
-    b.className='ftab'+(cat.id==='all'?' on':'');
-    b.dataset.cat=cat.id; b.textContent=cat.label;
-    b.addEventListener('click',()=>{
-      document.querySelectorAll('.ftab').forEach(x=>x.classList.remove('on'));
-      b.classList.add('on');
-      render(cat.id);
-    });
-    c.appendChild(b);
-  });
-})();
-
-const EXT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
-
-/* Build card */
-function card(p){
-  const img = p.cover
-    ? `<img src="${p.cover}" alt="${p.title}" loading="lazy" onerror="this.closest('.c-img').innerHTML='<div class=\\'no-img\\'>[sem pr\u00e9-visualiza\u00e7\u00e3o]</div>'">`
-    : `<div class="no-img">[sem pr\u00e9-visualiza\u00e7\u00e3o]</div>`;
-  const fr = p.photoCount>0 ? `<span class="c-frames">${p.photoCount.toLocaleString()} frames</span>` : '';
-  const desc = p.desc ? `<p class="c-desc">${p.desc}</p>` : '';
-  const infoBtn = p.info ? `<a href="${p.info}" class="c-btn">Info</a>` : '';
-  const metaParts = [p.year, p.location].filter(Boolean).join(' \u00b7 ');
-  return `
-    <div class="card" data-cat="${p.category}">
-      <div class="c-img">
-        ${img}
-        <div class="c-grad"></div>
-        <span class="c-badge">${p.category}</span>
-        ${fr}
-      </div>
-      <div class="c-body">
-        <div class="c-title">${p.title}</div>
-        ${metaParts ? `<div class="c-exif">${metaParts}</div>` : ''}
-        ${desc}
-        <div class="c-actions">
-          ${infoBtn}
-          ${p.slug ? `<a href="${p.slug}" target="_blank" rel="noopener" class="c-btn">${EXT} View Photos</a>` : ''}
-        </div>
-      </div>
-    </div>`;
-}
-
-/* Render */
-function render(cat){
-  const pool = (cat==='all'?[...PROJECTS]:PROJECTS.filter(p=>p.category===cat))
-    .sort((a,b)=>b.id-a.id);
-  const g = document.getElementById('grid');
-  document.getElementById('vc').textContent = pool.length;
-  if(!pool.length){
-    g.innerHTML=`<div style="padding:5rem;font-family:var(--font-m);font-size:.48rem;letter-spacing:.28em;color:var(--dim);text-transform:uppercase;grid-column:1/-1">Nenhum projeto encontrado.</div>`;
-    return;
-  }
-  g.innerHTML = pool.map(card).join('');
-  requestAnimationFrame(()=>{
-    g.querySelectorAll('.card').forEach((c,i)=>{
-      setTimeout(()=>c.classList.add('in'), i*60);
-    });
-  });
-}
-render('all');
-
-/* Reveal */
-const ro = new IntersectionObserver(
-  entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),
-  {threshold:.04}
+const totalPhotographs = PROJECTS.reduce(
+  (total, project) => total + (project.photoCount || 0),
+  0
 );
-document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+document.querySelector('[data-stat="projects"]').textContent = PROJECTS.length;
+document.querySelector('[data-stat="photographs"]').textContent =
+  totalPhotographs.toLocaleString('en');
 
-/* Progress */
-window.addEventListener('scroll',()=>{
-  document.getElementById('bar').style.width =
-    Math.min(window.scrollY/(document.documentElement.scrollHeight-innerHeight)*100,100)+'%';
+CATS.forEach(category => {
+  if (category.id !== 'all' && !availableCategories.has(category.id)) return;
+
+  const button = document.createElement('button');
+  button.className = 'ftab';
+  button.type = 'button';
+  button.dataset.cat = category.id;
+  button.textContent = category.label;
+  button.setAttribute('aria-pressed', String(category.id === 'all'));
+  button.addEventListener('click', () => {
+    filterContainer.querySelectorAll('.ftab').forEach(filter => {
+      filter.setAttribute('aria-pressed', String(filter === button));
+    });
+    renderProjects(category.id);
+  });
+  filterContainer.appendChild(button);
 });
+
+function renderProject(project) {
+  const meta = [project.year, project.location].filter(Boolean).join(' · ');
+  const category = CATS.find(item => item.id === project.category);
+  const count = project.photoCount
+    ? `${project.photoCount.toLocaleString()} photographs`
+    : '';
+
+  return `
+    <article class="card">
+      <a class="card-image-link" href="${project.slug}" aria-label="View photos from ${project.title}">
+        <div class="c-img">
+          <img src="${project.cover}" alt="${project.title}" loading="lazy" decoding="async">
+          <span class="c-badge">${category ? category.label : project.category}</span>
+          ${count ? `<span class="c-frames">${count}</span>` : ''}
+        </div>
+      </a>
+      <div class="c-body">
+        <p class="c-meta">${meta}</p>
+        <h3 class="c-title">${project.title}</h3>
+        <a class="c-link" href="${project.slug}">
+          View project <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </article>`;
+}
+
+function renderProjects(categoryId) {
+  const projects = PROJECTS
+    .filter(project => categoryId === 'all' || project.category === categoryId)
+    .sort((first, second) => second.id - first.id);
+
+  projectCount.textContent = projects.length;
+  projectGrid.innerHTML = projects.length
+    ? projects.map(renderProject).join('')
+    : '<p class="empty-state">No projects in this category yet.</p>';
+}
+
+renderProjects('all');

@@ -351,60 +351,93 @@
        PORTFOLIO SHOWCASE
     ========================================================= */
     #portfolio-showcase {
-      padding: 8rem 6rem;
+      position: relative; overflow: hidden;
+      padding: 7rem 6rem 8rem;
       background: var(--bg);
       border-top: 1px solid var(--brd);
       border-bottom: 1px solid var(--brd);
     }
-
-    .pf-category {
-      margin-bottom: 7rem;
-      display: flex; flex-direction: column;
+    #portfolio-showcase::before {
+      content: ''; position: absolute; top: 0; left: 6rem;
+      width: min(18rem, 32vw); height: 1px;
+      background: linear-gradient(90deg, var(--grn), transparent);
     }
-    .pf-category:last-child { margin-bottom: 0; }
-
+    .pf-intro, .pf-categories {
+      width: min(100%, 1440px); margin-inline: auto;
+    }
+    .pf-intro {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 2rem; padding-bottom: 3.5rem;
+    }
+    .pf-intro-copy { max-width: 700px; }
+    .pf-kicker {
+      display: block; margin-bottom: 1.1rem;
+      color: var(--grn); font-family: var(--fmh); font-size: .55rem;
+      letter-spacing: .22em; text-transform: uppercase;
+    }
+    .pf-kicker::before { content: '// '; color: var(--dim); }
+    .pf-intro-title {
+      color: var(--white); font-family: var(--fd);
+      font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: .92;
+      letter-spacing: .025em;
+    }
+    .pf-intro-text {
+      max-width: 34rem; margin-top: 1.1rem;
+      color: var(--w2); font-family: var(--fmh);
+      font-size: .68rem; font-weight: 300; line-height: 1.9;
+    }
+    .pf-intro-index {
+      padding-bottom: .35rem; color: var(--dim);
+      font-family: var(--fmh); font-size: .58rem; letter-spacing: .16em;
+      white-space: nowrap;
+    }
+    .pf-intro-index span { color: var(--grn); padding: 0 .45rem; }
+    .pf-categories { border-top: 1px solid var(--brd); }
+    .pf-category {
+      padding: 3.4rem 0 4.2rem;
+      display: flex; flex-direction: column;
+      border-bottom: 1px solid var(--brd);
+    }
+    .pf-category:last-child { padding-bottom: 0; border-bottom: 0; }
     .pf-header {
-      display: flex; align-items: center; gap: 1.4rem;
-      margin-bottom: 2.6rem; position: relative;
+      display: flex; align-items: center; gap: 1.2rem;
+      margin-bottom: 2rem; position: relative;
     }
     .pf-num {
       font-family: var(--fmh); font-size: .72rem; font-weight: 500;
-      letter-spacing: .1em; color: var(--grn);
-      border: 1px solid var(--brd2);
-      padding: .4rem .6rem; flex-shrink: 0;
-      background: var(--bg2);
+      letter-spacing: .1em; color: var(--dim);
+      padding-right: 1.1rem; border-right: 1px solid var(--brd2);
+      flex-shrink: 0;
     }
     .pf-head-text { position: relative; z-index: 1; }
     .pf-eye {
       display: block; font-family: var(--fmh); font-size: .48rem;
-      letter-spacing: .3em; text-transform: uppercase;
-      color: var(--dim2); margin-bottom: .4rem;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--dim); margin-bottom: .45rem;
     }
     .pf-eye::before { content: '// '; color: var(--grn); }
     .pf-title {
-      font-family: var(--fd); font-size: clamp(2rem, 4vw, 3.4rem);
+      font-family: var(--fd); font-size: clamp(1.8rem, 3vw, 2.6rem);
       line-height: 1; letter-spacing: .04em; color: var(--white);
     }
     .pf-more {
       margin-left: auto;
       display: inline-flex; align-items: center; gap: .6rem;
-      padding: .85rem 1.7rem;
-      font-family: var(--fmh); font-size: .5rem; font-weight: 500;
-      letter-spacing: .22em; text-transform: uppercase; text-decoration: none;
-      color: var(--grn); border: 1px solid var(--brd2);
-      background: transparent; white-space: nowrap;
-      transition: background .3s, box-shadow .3s, transform .3s;
+      padding: .7rem 0 .7rem .8rem;
+      font-family: var(--fmh); font-size: .52rem; font-weight: 500;
+      letter-spacing: .15em; text-transform: uppercase; text-decoration: none;
+      color: var(--w2); white-space: nowrap;
+      transition: color .25s, transform .25s;
     }
-    .pf-more:hover {
-      background: var(--g2);
-      box-shadow: 0 0 24px rgba(0,255,136,.15);
-      transform: translateY(-1px);
+    .pf-more:hover, .pf-more:focus-visible {
+      color: var(--grn); transform: translateX(2px);
     }
     .pf-more span {
-      font-size: 1rem; line-height: 1;
-      transition: transform .3s; display: inline-block;
+      color: var(--grn); font-size: 1rem; line-height: 1;
+      transition: transform .25s; display: inline-block;
     }
-    .pf-more:hover span { transform: translateX(5px); }
+    .pf-more:hover span, .pf-more:focus-visible span { transform: translateX(4px); }
+    .pf-more:focus-visible { outline: 1px solid var(--grn); outline-offset: 4px; }
 
     .pf-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
@@ -912,8 +945,11 @@
       .sys-grid { grid-template-columns: 1fr; }
       #sys-report { padding: 3rem 1.25rem; }
       .sys-term .term-body { padding: .8rem; }
-      .pf-header { flex-wrap: wrap; }
-      .pf-more { margin-left: 0; }
+      .pf-intro { padding-bottom: 2.5rem; }
+      .pf-intro-index { display: none; }
+      .pf-category { padding: 2.6rem 0 3rem; }
+      .pf-header { flex-wrap: wrap; align-items: flex-start; }
+      .pf-more { margin-left: auto; }
       .disc-grid { grid-template-columns: 1fr; }
       .pf-grid { grid-template-columns: 1fr; }
       .h-cta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.2rem 1.6rem; }

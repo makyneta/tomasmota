@@ -1,223 +1,114 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <!-- Metadados -->
   <meta charset="UTF-8">
-  <title>Photography | Makyneta by Tomás Mota</title>
-  <meta name="description" content="Portfolio of photography by Tomás Mota. Events, sports, portraits and documentary photography in Leiria, Coimbra and throughout the national territory.">
-  <link rel="canonical" href="https://makyneta.dev/en/photo">
+  <title>Photography Portfolio | Tomás Mota — Makyneta</title>
+  <meta name="description" content="Professional event, sports, theatre and portrait photography by Tomás Mota. Based in Leiria and available for commissions across Portugal.">
+  <link rel="canonical" href="https://www.makyneta.dev/photography">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Makyneta Unipessoal, Lda."/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Photography | Makyneta by Tomás Mota">
-  <meta property="og:description" content="Portfolio of photography by Tomás Mota. Events, sports, portraits and documentary photography in Leiria, Coimbra and throughout the national territory.">
-  <meta property="og:url" content="https://makyneta.dev/en/photo">
-  <meta property="og:image" content="https://makyneta.dev/assets/images/ui/og-image.webp">
+  <meta property="og:title" content="Photography Portfolio | Tomás Mota — Makyneta">
+  <meta property="og:description" content="Professional event, sports, theatre and portrait photography by Tomás Mota. Based in Leiria and available for commissions across Portugal.">
+  <meta property="og:url" content="https://www.makyneta.dev/photography">
+  <meta property="og:image" content="https://www.makyneta.dev/assets/images/ui/og-image.webp">
   <meta property="og:site_name" content="Makyneta">
-  <meta property="og:locale" content="pt_PT">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Photography | Makyneta by Tomás Mota">
-  <meta name="twitter:description" content="Portfolio of photography by Tomás Mota. Events, sports, portraits and documentary photography in Leiria, Coimbra and throughout the national territory.">
-  <meta name="twitter:image" content="https://makyneta.dev/assets/images/ui/og-image.webp">
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://makyneta.dev/#organization",
-    "name": "Makyneta",
-    "legalName": "Makyneta Unipessoal, Lda.",
-    "url": "https://makyneta.dev",
-    "logo": "https://makyneta.dev/assets/images/ui/og-image.webp",
-    "email": "makyneta@tutamail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Leiria",
-      "addressCountry": "PT"
-    },
-    "foundingDate": "2023",
-    "founder": {
-      "@type": "Person",
-      "@id": "https://makyneta.dev/#person",
-      "name": "Tomás Mota",
-      "jobTitle": "Programador Fullstack & Diretor Criativo",
-      "url": "https://makyneta.dev/about",
-      "sameAs": [
-        "https://instagram.com/makynetadev",
-        "https://facebook.com/makynetadev",
-        "https://github.com/makyneta"
-      ]
-    },
-    "sameAs": [
-        "https://instagram.com/makynetadev",
-        "https://facebook.com/makynetadev",
-      "https://github.com/makyneta"
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://makyneta.dev/#website",
-    "url": "https://makyneta.dev",
-    "name": "Makyneta",
-    "description": "Estúdio criativo especializado em desenvolvimento web fullstack, fotografia, design e serviços de vídeo.",
-    "publisher": {
-      "@id": "https://makyneta.dev/#organization"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://makyneta.dev/#service",
-    "name": "Makyneta",
-    "image": "https://makyneta.dev/assets/images/ui/og-image.webp",
-    "url": "https://makyneta.dev",
-    "email": "makyneta@tutamail.com",
-    "priceRange": "€€",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Portugal"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Serviços",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desenvolvimento Web" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fotografia" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design Gráfico" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Produção de Vídeo" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Suporte Informático" } }
-      ]
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Leiria",
-      "addressCountry": "PT"
-    }
-  }
-]
-</script>
+  <meta name="twitter:title" content="Photography Portfolio | Tomás Mota — Makyneta">
+  <meta name="twitter:description" content="Professional event, sports, theatre and portrait photography by Tomás Mota. Based in Leiria and available for commissions across Portugal.">
+  <meta name="twitter:image" content="https://www.makyneta.dev/assets/images/ui/og-image.webp">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/photo.css">
   <link rel="stylesheet" href="/assets/styles/geral.css">
+  <link rel="stylesheet" href="/assets/styles/photo.css">
   
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   
   <!-- Scripts -->
-  <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="/assets/scripts/photo-en.js"></script>
   <script src="/assets/scripts/script-en.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div id="bar"></div>
   <div id="header"></div>
 
-  <main>
-
-    <!-- HERO -->
-    <section id="hero">
-      <div class="hero-bg">
-        <img id="hero-bg" src="/assets/images/projects/photo/camg-voltaaos7.webp" alt=""/>
-        <div class="hero-overlay"></div>
-      </div>
-
-      <div class="h-exif" aria-hidden="true">RAW&nbsp;&middot;&nbsp;24&ndash;70MM&nbsp;&middot;&nbsp;GRAIN&nbsp;400</div>
-
-      <div class="hero-inner">
-        <div class="h-eye">
-          <span class="term-prompt">
-            <span class="tp-user">tomas@makyneta</span><span class="tp-sep">:~$</span>
-            <span class="tp-cmd" id="typecmd"></span><span class="tp-cursor">&#9615;</span>
-          </span>
+  <main id="main-content">
+    <section class="photo-hero" aria-labelledby="page-title">
+      <div class="photo-hero-copy">
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Tomás Mota · Photographer · Portugal</p>
+        <h1 id="page-title">Photography<br>with <em>purpose.</em></h1>
+        <p class="hero-description">Event, sports and cultural photography for organisations that need a considered visual record of their work.</p>
+        <div class="hero-links">
+          <a class="button button-dark" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="/about">Professional profile <span aria-hidden="true">↗</span></a>
         </div>
-        <h1 class="h-title">PHOTOGRAPHY</h1>
-        <!-- <p class="h-lead">Events &middot; Sports &middot; Portraits &middot; Documentary</p> -->
-        <!-- <div class="h-actions">
-          <a href="contact" class="btn-gold">
-            <span>Book a session</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="/banlek" target="_blank" rel="noopener" class="btn-ghost">banlek.com/makyneta</a>
-        </div> -->
+        <div class="hero-note">
+          <span class="note-rule" aria-hidden="true"></span>
+          <p>Based in Leiria<br><strong>Available nationwide</strong></p>
+        </div>
       </div>
+      <figure class="photo-hero-image">
+        <img src="/assets/images/projects/photo/camg-voltaaos7.webp" alt="Cyclist competing in the Volta aos 7 race in Marinha Grande" fetchpriority="high">
+        <figcaption><span>Volta aos 7 · Sport</span><span>Marinha Grande, Portugal · 2026</span></figcaption>
+        <span class="image-index" aria-hidden="true">01</span>
+      </figure>
+      <span class="hero-side-note" aria-hidden="true">EVENT · SPORT · PORTRAIT</span>
+    </section>
 
-      <div class="h-scroll">
-        <div class="scroll-bar"></div>
-        <span class="scroll-txt">Scroll</span>
+    <section class="portfolio-proof" aria-label="Portfolio at a glance">
+      <div class="proof-item">
+        <span class="proof-value" data-stat="projects">21</span>
+        <span class="proof-label">documented assignments</span>
+      </div>
+      <div class="proof-item">
+        <span class="proof-value" data-stat="photographs">4,500</span>
+        <span class="proof-label">photographs in project galleries</span>
+      </div>
+      <div class="proof-item proof-focus">
+        <span class="proof-value">Portugal</span>
+        <span class="proof-label">Leiria based · nationwide coverage</span>
       </div>
     </section>
 
-    <!-- TICKER -->
-    <div id="ticker">
-      <span class="tk-live"><span class="tk-live-dot"></span>LIVE</span>
-      <div class="tk-track"><div class="ticker-t" id="tt"></div></div>
-    </div>
-
-    <!-- FILTER / TERMINAL -->
-    <nav id="fbar">
-      <div class="term-chrome">
-        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
-        <span class="term-path">~/makyneta/photography/filter.sh</span>
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Selected commissions · 2024—2026</p>
+          <h2 id="work-title">Selected <span>work.</span></h2>
+        </div>
+        <p class="section-intro">Coverage across sport, public events, education and the performing arts. Select a commission to explore its gallery.</p>
       </div>
-      <div class="term-body">
-        <span class="term-inline-prompt">$ ls --category</span>
-        <div class="ftabs" id="ftabs"></div>
-        <span class="fc"><strong id="vc">&mdash;</strong>&nbsp;projetos</span>
+      <div class="work-toolbar">
+        <nav class="filter-nav" aria-label="Filter photography projects">
+          <div class="ftabs" id="ftabs"></div>
+        </nav>
+        <p class="project-count"><span id="vc" aria-live="polite">—</span> projects</p>
       </div>
-    </nav>
-
-    <!-- GRID -->
-    <section id="grid-section" class="reveal">
-      <div class="grid" id="grid"></div>
+      <div class="grid" id="grid" aria-live="polite"></div>
     </section>
 
-    <!-- HIRE -->
-    <section id="hire" class="reveal">
-      <div class="hire-l">
-        <div class="hire-eyebrow">Available for hire</div>
-        <h2 class="hire-heading">
-          Looking for a photographer<br>who delivers <em>more</em><br>than just images?
-        </h2>
-        <div class="svc-list">
-          <div class="svc">Events &amp; Concerts<span class="svc-arr">&rarr;</span></div>
-          <div class="svc">Sports Photography<span class="svc-arr">&rarr;</span></div>
-          <div class="svc">Portraits &amp; Headshots<span class="svc-arr">&rarr;</span></div>
-          <div class="svc">Street &amp; Documentary<span class="svc-arr">&rarr;</span></div>
-          <div class="svc">Institutional Coverage<span class="svc-arr">&rarr;</span></div>
-        </div>
-        <a href="contact" class="btn-gold">
-          <span>Book a session</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
+    <section class="contact-panel" aria-labelledby="contact-title">
+      <div class="contact-panel-top">
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> Photography commissions</p>
+        <span class="contact-location">Leiria, Portugal · Available nationwide</span>
       </div>
-      <div class="hire-r">
-        <div class="avail">
-          <span class="avail-dot"></span>
-          Available &mdash; Portugal
-        </div>
-        <blockquote class="hire-quote">
-          &ldquo;Every project is approached with the same discipline &mdash; technical precision meets instinct, and instinct meets story.&rdquo;
-        </blockquote>
-
-        <div class="json-block" aria-label="Informações de contacto">
-          <div class="jb-line"><span class="jb-brace">{</span></div>
-          <div class="jb-line jb-indent"><span class="jb-key">&quot;email&quot;</span><span class="jb-colon">:</span> <span class="jb-str">&quot;tomas@makyneta.dev&quot;</span><span class="jb-comma">,</span></div>
-          <div class="jb-line jb-indent"><span class="jb-key">&quot;location&quot;</span><span class="jb-colon">:</span> <span class="jb-str">&quot;Leiria, Portugal&quot;</span><span class="jb-comma">,</span></div>
-          <div class="jb-line jb-indent"><span class="jb-key">&quot;availability&quot;</span><span class="jb-colon">:</span> <span class="jb-str jb-mint">&quot;nacional&quot;</span></div>
-          <div class="jb-line"><span class="jb-brace">}</span></div>
+      <div class="contact-panel-main">
+        <h2 id="contact-title">Let’s discuss<br><em>your project.</em></h2>
+        <div class="contact-panel-action">
+          <p>For event coverage, sports assignments and cultural projects, get in touch to discuss your brief.</p>
+          <a class="button button-light" href="/contact">Discuss a commission <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
-
   </main>
 
   <div id="footer"></div>

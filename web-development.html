@@ -4,25 +4,25 @@
   <!-- Metadados -->
   <meta charset="UTF-8">
   <title>Web Development | Makyneta by Tomás Mota</title>
-  <meta name="description" content="Portfolio of web development projects by Makyneta. Projects in React, Node.js, TypeScript, Python developed for real clients.">
-  <link rel="canonical" href="https://makyneta.dev/dev">
+  <meta name="description" content="Explore thoughtful, custom web development by Makyneta — from polished front-end experiences to full-stack platforms built around real business needs.">
+  <link rel="canonical" href="https://www.makyneta.dev/web-development">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Makyneta Unipessoal, Lda."/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Web Development | Makyneta by Tomás Mota">
-  <meta property="og:description" content="Portfolio of web development projects by Makyneta. Projects in React, Node.js, TypeScript, Python developed for real clients.">
-  <meta property="og:url" content="https://makyneta.dev/dev">
-  <meta property="og:image" content="https://makyneta.dev/assets/images/ui/og-image.webp">
+  <meta property="og:description" content="Thoughtful, custom web development — from polished front-end experiences to full-stack platforms built around real business needs.">
+  <meta property="og:url" content="https://www.makyneta.dev/web-development">
+  <meta property="og:image" content="https://www.makyneta.dev/assets/images/ui/og-image.webp">
   <meta property="og:site_name" content="Makyneta">
   <meta property="og:locale" content="pt_PT">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Web Development | Makyneta by Tomás Mota">
-  <meta name="twitter:description" content="Portfolio of web development projects by Makyneta. Projects in React, Node.js, TypeScript, Python developed for real clients.">
-  <meta name="twitter:image" content="https://makyneta.dev/assets/images/ui/og-image.webp">
+  <meta name="twitter:description" content="Thoughtful, custom web development — from polished front-end experiences to full-stack platforms built around real business needs.">
+  <meta name="twitter:image" content="https://www.makyneta.dev/assets/images/ui/og-image.webp">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -141,7 +141,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/styles/geral.css">
   <link rel="stylesheet" href="/assets/styles/dev.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -154,63 +154,73 @@
   <div id="header"></div>
  
   <main>
-    <!-- ══ HERO ══════════════════════════════════════════════════════ -->
-    <section id="page-hero">
-      <div class="about-eyebrow page-eyebrow"><span>Portfolio — Development</span></div>
- 
-      <!-- Terminal widget -->
-      <div class="terminal-window">
-        <div class="term-bar">
-          <span class="term-dot r"></span>
-          <span class="term-dot y"></span>
-          <span class="term-dot g"></span>
-          <span class="term-title">makyneta — zsh</span>
+    <section id="page-hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="page-eyebrow"><span class="eyebrow-mark"></span> Independent web development · Portugal</p>
+          <h1 class="page-title" id="hero-title">A better web<br>starts with <span>purpose.</span></h1>
+          <p class="hero-lead">I design and build considered digital experiences that make complex things feel simple — and help good businesses move forward.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+            <a class="button button-text" href="/contact">Discuss a project <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-note"><span class="note-dot"></span> Thoughtful by design. Built to last.</p>
         </div>
-        <div class="term-body">
-          <div class="term-line"><span class="term-prompt">~/makyneta $</span><span class="term-cmd"> ls projects/</span></div>
-          <div class="term-line term-out"><span class="hi-g">frontend/</span>&nbsp;&nbsp;<span class="hi-c">fullstack/</span>&nbsp;&nbsp;<span class="hi-y">backend/</span></div>
-          <div class="term-line" style="margin-top:0.3rem"><span class="term-prompt">~/makyneta $</span><span class="term-cmd"> git log --oneline -3</span></div>
-          <div class="term-line term-out"><span class="hi-c">a3f9c2d</span> feat: launch makyneta portfolio</div>
-          <div class="term-line term-out"><span class="hi-c">b8e1f0a</span> feat: add mayday site</div>
-          <div class="term-line term-out"><span class="hi-c">d4c7891</span> feat: ship donut-man fullstack</div>
-          <div class="term-line" style="margin-top:0.3rem"><span class="term-prompt">~/makyneta $</span><span class="term-cmd"> npm run build</span></div>
-          <div class="term-line term-out" style="color:var(--green)">✓ Built successfully in 1.2s</div>
-          <div class="term-line"><span class="term-prompt">~/makyneta $</span><span class="term-cursor"></span></div>
-        </div>
-      </div>
- 
-      <h1 class="page-title">
-        DEV<br>
-        <!-- <span class="outline">MENT</span> -->
-      </h1>
- 
-      <div class="hero-foot">
-        <div class="hero-left">
-          <p class="hero-lead">
-            <span class="comment">/* Building robust and scalable systems —</span><br>
-            <span class="comment">&nbsp;&nbsp;&nbsp;from front-end interfaces to full-stack platforms.</span><br>
-            <span class="comment">&nbsp;&nbsp;&nbsp;Clean code, real implementation. */</span>
-          </p>
-          <!-- <a href="prices/dev" class="group mt-6 inline-flex items-center gap-2 bg-[#00ff88] px-5 py-3 text-[0.5rem] uppercase tracking-[0.22em] text-black no-underline transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(0,255,136,0.4)]">View Prices <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a> -->
-        </div>
-        <div class="project-count">
-          <span class="num" id="count-num">12</span>
-          <span id="count-label">projects indexed</span>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-outer"></div>
+          <div class="art-orbit orbit-inner"></div>
+          <div class="art-cross cross-horizontal"></div>
+          <div class="art-cross cross-vertical"></div>
+          <div class="art-core"><span><img src="/assets/images/gallery/makyneta-logo-v3.png" alt="Makyneta Logo" /></span></div>
+          <div class="art-label art-label-top"><span>01</span> clarity</div>
+          <div class="art-label art-label-right"><span>02</span> craft</div>
+          <div class="art-label art-label-bottom"><span>03</span> purpose</div>
+          <div class="art-caption">A thoughtful approach<br>to every interaction.</div>
         </div>
       </div>
+      <div class="hero-index"><span>01 / 03</span><span>Digital experiences, made with intent</span></div>
     </section>
- 
-    <!-- ══ FILTER BAR ══════════════════════════════════════════════ -->
-    <nav id="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="frontend">Front-end</button>
-      <button class="filter-btn" data-filter="fullstack">Fullstack</button>
-      <button class="filter-btn" data-filter="backend">Back-end</button>
-    </nav>
- 
-    <!-- ══ PROJECTS ════════════════════════════════════════════════ -->
-    <section id="projects-section" class="reveal">
-      <div class="projects-grid" id="projects-grid"></div>
+
+    <section id="work" class="work-section" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Selected work <span>— Front-end / Full-stack / Back-end</span></p>
+          <h2 id="work-title">Made for the real world.</h2>
+        </div>
+        <p class="section-intro">Every project starts with a different challenge. Here are a few of the digital experiences built to meet them.</p>
+      </div>
+
+      <div class="work-toolbar">
+        <nav id="filter-bar" aria-label="Filter projects by type">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter-btn" data-filter="frontend" aria-pressed="false">Front-end</button>
+          <button class="filter-btn" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+          <button class="filter-btn" data-filter="backend" aria-pressed="false">Back-end</button>
+        </nav>
+        <p class="project-count"><span id="count-num">15</span> <span id="count-label">projects</span></p>
+      </div>
+
+      <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="approach-section" aria-labelledby="approach-title">
+      <div class="approach-heading">
+        <p class="section-kicker">A considered process</p>
+        <h2 id="approach-title">Good work is built<br>on <span>good questions.</span></h2>
+        <p>Clear communication and careful decisions at every step — from the first conversation to the final details.</p>
+      </div>
+      <ol class="approach-steps">
+        <li><span class="step-number">01</span><div><h3>Understand</h3><p>Get to the heart of your goals, your audience and what success means to you.</p></div></li>
+        <li><span class="step-number">02</span><div><h3>Shape</h3><p>Turn the brief into a considered direction, with the right structure and priorities.</p></div></li>
+        <li><span class="step-number">03</span><div><h3>Build</h3><p>Develop a responsive, dependable experience with attention to the details.</p></div></li>
+        <li><span class="step-number">04</span><div><h3>Refine</h3><p>Review together, make thoughtful improvements, and prepare for launch.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="contact-cta" aria-labelledby="cta-title">
+      <div><p class="section-kicker">Have something in mind?</p><h2 id="cta-title">Let’s make it<br><span>work beautifully.</span></h2></div>
+      <a class="button button-primary" href="/contact">Tell me about your project <span aria-hidden="true">↗</span></a>
     </section>
   </main>
  

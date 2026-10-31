@@ -145,6 +145,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles/geral.css">
   <link rel="stylesheet" href="/assets/styles/home.css">
+  <link rel="stylesheet" href="/assets/styles/home-new.css">
   <link rel="stylesheet" href="/assets/styles/cookies.css">
   <link rel="stylesheet" href="/assets/styles/loading.css">
   
@@ -152,6 +153,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/assets/scripts/blockhash.js"></script>
   <script src="/assets/scripts/home-en.js" defer></script>
+  <script src="/assets/scripts/home-en-new.js" defer></script>
   <script src="/assets/scripts/script-en.js" defer></script>
   <script src="/assets/scripts/cookies-en.js" defer></script>
   <!-- <script src="/assets/scripts/loading.js" defer></script> -->
@@ -176,89 +178,49 @@
   <main>
  
     <!-- ══ HERO ══════════════════════════════════════════════════════ -->
-    <section id="hero">
-      <div class="hero-text">
-
-        <div class="h-eye"><span>// makyneta by tomás mota</span></div>
-
-        <h1 class="h-title">
-          <span class="h-sub">&gt; Tomás Mota — fullstack developer &amp; photographer</span>
-          <span class="h-big">BUILD THE<br class="h-br"> <span class="h-accent">THAT MATTERS</span></span>
-        </h1>
-
-        <p class="h-desc">
-          <span class="comment">/* Since 2024, providing precise technical solutions for</span><br>
-          <span class="comment">&nbsp;&nbsp;&nbsp;theater companies, sports organizations and educational</span><br>
-          <span class="comment">&nbsp;&nbsp;&nbsp;groups — where robust logic meets the stage. */</span>
-        </p>
-
-        <div class="h-chips">
-          <span class="chip hi">Fullstack</span>
-          <span class="chip">React</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">Python</span>
-          <span class="chip hi">Photography</span>
-        </div>
-
-        <div class="h-cta">
-          <a href="#portfolio-showcase" class="btn-g">
-            <span>Portfolio</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    <section id="hero" class="mk-hero" aria-labelledby="mk-hero-title">
+      <div class="mk-hero-copy">
+        <p class="mk-hero-kicker"><span class="mk-kicker-line" aria-hidden="true"></span>Independent creative studio · Leiria, Portugal</p>
+        <h1 class="mk-hero-title" id="mk-hero-title"><span>MAKE IDEAS</span><span class="mk-title-accent">MATTER.</span></h1>
+        <p class="mk-hero-intro">Thoughtful digital experiences and visual stories, built with equal parts technical precision and creative intent.</p>
+        <div class="mk-hero-actions">
+          <a class="mk-hero-link mk-hero-link-primary" href="#portfolio-showcase">Explore selected work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="about" class="btn-ghost">About</a>
-          <a href="contact" class="btn-ghost">Contact</a>
+          <a class="mk-hero-link" href="/contact">Start a conversation <span aria-hidden="true">↗</span></a>
         </div>
+        <ul class="mk-hero-meta" aria-label="Services">
+          <li>Web development</li><li>Photography</li><li>Design &amp; video</li>
+        </ul>
       </div>
 
-      <!-- Terminal panel -->
-      <div class="term-panel">
-        <div class="dev-col">
-
-          <div class="profile-card">
-            <div class="profile-avatar">
-              <img src="/assets/images/profile/tomas-mota.webp" alt="Tomás Mota"/>
-            </div>
-            <div class="profile-info">
-              <span class="profile-name">Tomás Mota</span>
-              <span class="profile-handle">Makyneta Unipessoal, Lda.</span>
-              <span class="profile-meta">Developer Fullstack · Photographer</span>
-            </div>
-            <div class="profile-status"><span class="status-dot"></span>Available</div>
+      <div class="mk-hero-art" aria-label="Makyneta creative work preview">
+        <!-- <span class="mk-orbit-mark" aria-hidden="true"></span> -->
+        <article class="mk-visual-card">
+          <div class="mk-visual-top"><span class="mk-visual-label">Makyneta / Selected work</span><span class="mk-visual-live">Independent studio</span></div>
+          <div class="mk-visual-image" aria-hidden="true">
+            <img class="mk-visual-img" src="/assets/images/profile/tomas-mota.webp" alt="Makyneta creative work preview" loading="lazy">
+            <!-- <svg class="mk-visual-symbol" viewBox="0 0 120 120" fill="none">
+              <path d="M18 96V24h19l23 34 23-34h19v72H81V57L60 87 39 57v39H18Z" fill="#101310"/>
+              <circle cx="99" cy="21" r="7" fill="#101310"/>
+            </svg> -->
+            <span class="mk-visual-caption">LEIRIA · PT</span>
           </div>
-
-          <div class="term-window">
-            <div class="term-bar">
-              <span class="term-dot r"></span>
-              <span class="term-dot y"></span>
-              <span class="term-dot g"></span>
-              <span class="term-title">tomasmota@makyneta — zsh</span>
-            </div>
-            <div class="term-body">
-              <div class="term-line"><span class="term-prompt">~/makyneta $</span><span class="term-cmd">whoami</span></div>
-              <div class="term-line term-out">Tomás Mota — <span class="hi-grn">fullstack developer</span></div>
-              <div class="term-line"><span class="term-prompt">~/makyneta $</span><span class="term-cmd">pwd</span></div>
-              <div class="term-line term-out">/home/leiria/creative-studio</div>
-              <div class="term-line"><span class="term-prompt">~/makyneta $</span><span class="term-cmd">cat stack.txt</span></div>
-              <div class="term-line term-out">react · node · typescript · python</div>
-              <div class="term-line"><span class="term-prompt">~/makyneta $</span><span class="term-cmd">./status.sh</span></div>
-              <div class="term-line term-out ok"><span class="dot"></span>available for new projects</div>
-              <div class="term-line"><span class="term-prompt">~/makyneta $</span><span class="term-cursor"></span></div>
-            </div>
+          <div class="mk-visual-bottom">
+            <div><p class="mk-visual-project">Digital, made human.</p><span class="mk-visual-type">STRATEGY · BUILD · IMAGE</span></div>
+            <span class="mk-visual-index" aria-hidden="true">01</span>
           </div>
-
-        </div>
+        </article>
       </div>
 
-      <!-- Status bar -->
-      <div class="statusbar">
-        <span class="sb-item">makyneta · leiria, portugal</span>
-        <span class="sb-item sb-right"><span class="sb-dot"></span>available for new projects</span>
+      <div class="mk-hero-footer">
+        <span class="mk-hero-location">Makyneta by Tomás Mota</span>
+        <time class="mk-hero-clock" id="mk-hero-clock" aria-label="Local time in Leiria">LEIRIA — LOCAL TIME</time>
       </div>
     </section>
-
+    
     <!-- ══ SYSTEM REPORT ══════════════════════════════════════════════ -->
-    <section id="sys-report" class="reveal">
+    <!-- <section id="sys-report" class="reveal">
       <div class="sys-term">
         <div class="term-bar">
           <span class="term-dot r"></span>
@@ -293,47 +255,72 @@
           <div class="term-line"><span class="term-prompt">$</span><span class="term-cursor"></span></div>
         </div>
       </div>
-    </section>
+    </section> -->
  
     <!-- ══ PORTFOLIO SHOWCASE ═══════════════════════════════════════════ -->
-    <section id="portfolio-showcase" class="reveal">
-
-      <div class="pf-category">
-        <div class="pf-header">
-          <span class="pf-num">01</span>
-          <div class="pf-head-text">
-            <!-- <span class="pf-eye">development</span> -->
-            <h2 class="pf-title">DEVELOPMENT</h2>
-          </div>
-          <a href="/web-development" class="pf-more">View all <span>→</span></a>
+    <section id="portfolio-showcase" class="reveal" aria-labelledby="portfolio-title">
+      <header class="pf-intro">
+        <div class="pf-intro-copy">
+          <span class="pf-kicker">Portfolio / selected work</span>
+          <h2 class="pf-intro-title" id="portfolio-title">MADE TO MATTER.</h2>
+          <p class="pf-intro-text">Digital products and photographic stories, made with clarity and care.</p>
         </div>
-        <div class="pf-grid" id="pf-grid-dev"></div>
+        <span class="pf-intro-index" aria-hidden="true">01 <span>/</span> 02</span>
+      </header>
+
+      <div class="pf-categories">
+        <section class="pf-category" aria-labelledby="pf-title-dev">
+          <header class="pf-header">
+            <span class="pf-num" aria-hidden="true">01</span>
+            <div class="pf-head-text">
+              <span class="pf-eye">Web &amp; digital</span>
+              <h3 class="pf-title" id="pf-title-dev">DEVELOPMENT</h3>
+            </div>
+            <a href="/web-development" class="pf-more">View all <span aria-hidden="true">→</span></a>
+          </header>
+          <div class="pf-grid" id="pf-grid-dev"></div>
+        </section>
+
+        <section class="pf-category" aria-labelledby="pf-title-photo">
+          <header class="pf-header">
+            <span class="pf-num" aria-hidden="true">02</span>
+            <div class="pf-head-text">
+              <span class="pf-eye">People, places &amp; moments</span>
+              <h3 class="pf-title" id="pf-title-photo">PHOTOGRAPHY</h3>
+            </div>
+            <a href="/photography" class="pf-more">View all <span aria-hidden="true">→</span></a>
+          </header>
+          <div class="pf-grid" id="pf-grid-photo"></div>
+        </section>
       </div>
-
-      <div class="pf-category">
-        <div class="pf-header">
-          <span class="pf-num">02</span>
-          <div class="pf-head-text">
-            <!-- <span class="pf-eye">photography</span> -->
-            <h2 class="pf-title">PHOTOGRAPHY</h2>
-          </div>
-          <a href="/photography" class="pf-more">View all <span>→</span></a>
-        </div>
-        <div class="pf-grid" id="pf-grid-photo"></div>
-      </div>
-
-      <!-- <div class="pf-category">
-        <div class="pf-header">
-          <span class="pf-num">03</span>
-          <div class="pf-head-text">
-+            <h2 class="pf-title">DESIGN</h2>
-          </div>
-          <a href="design" class="pf-more">View all <span>→</span></a>
-        </div>
-        <div class="pf-grid" id="pf-grid-design"></div>
-      </div> -->
     </section>
  
+    <!-- ══ ABOUT ═══════════════════════════════════════════════════════ -->
+    <section id="about" aria-labelledby="about-title" class="reveal">
+      <div class="about-photo-wrap">
+        <img class="about-photo" src="/assets/images/profile/tomas-mota.webp"
+          alt="Tomás Mota, full-stack developer and photographer" loading="lazy">
+        <span class="about-photo-caption">LEIRIA, PORTUGAL</span>
+      </div>
+      <div class="about-copy">
+        <span class="about-kicker">// about the founder</span>
+        <h2 class="about-title" id="about-title">TOMÁS MOTA<br>
+          <!-- <span>DEVELOPER &amp; PHOTOGRAPHER</span> -->
+        </h2>
+        <p class="about-text">Tomás Mota is a full-stack developer and photographer based in Leiria, Portugal. Since 2024, he has worked with theatre companies, sports organisations and educational groups, building practical solutions for the people who use them.</p>
+        <p class="about-text">His work spans web development, photography, design and video, as well as IT support and live production. He is used to working across both the technical detail of a project and the practical demands of delivering it.</p>
+        <p class="about-text">Through Makyneta, he brings these skills together to help organisations turn ideas into reliable, well-crafted work.</p>
+        <div class="about-focus" aria-label="Areas of work">
+          <span class="about-tag">WEB DEVELOPMENT</span><span class="about-tag">PHOTOGRAPHY</span>
+          <span class="about-tag">DESIGN &amp; VIDEO</span><span class="about-tag">LIVE PRODUCTION</span>
+        </div>
+        <a class="about-cta" href="/about">
+          <span>Discover more</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </section>
+
     <!-- ══ TESTIMONIALS ═══════════════════════════════════════════════ -->
     <section id="testimonials" class="reveal">
       <div class="test-head">
@@ -479,6 +466,10 @@
   </main>
 
 <div id="footer"></div>
+
+<script>
+
+</script>
 
 <script>
 (function(){
