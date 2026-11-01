@@ -229,7 +229,6 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
           </div>
           <div class="pf-dev-body">
             <h3 class="pf-dev-title">${p.title}</h3>
-            <p class="pf-dev-desc">${p.desc}</p>
             <div class="pf-dev-tags">${p.tags.map(t => `<span class="pf-dev-tag">${t}</span>`).join('')}</div>
             <div class="pf-dev-actions">
               ${p.info ? `<a href="${p.info}">${INFO_ICON} Info</a>` : ''}

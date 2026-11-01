@@ -186,17 +186,17 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
   const VIEW_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>`;
 
   const devData = [
-    { title:"Esdras Lopes", desc:"Website for the student and musician, Esdras Lopes.", tags:["HTML","CSS","JS"],
+    { title:"Esdras Lopes", tags:[],
       img:"/assets/images/projects/dev/esdras-lopes.webp",
-      demo:"https://makyneta.github.io/esdras", info:"/dev/esdras" },
+      demo:"https://makyneta.github.io/esdras", info:"" },
 
-    { title:"Victor Campos", desc:"Website for the influencer, Victor Campos.", tags:["HTML","CSS","JS"],
+    { title:"Victor Campos", tags:[],
       img:"/assets/images/projects/dev/victor-campos.webp",
-      demo:"https://makyneta.github.io/victor", info:"/dev/victor" },
+      demo:"https://makyneta.github.io/victor", info:"" },
 
-    { title:"Clube Atletismo de Marinha Grande", desc:"Website for the Marinha Grande Athletics Club.", tags:["HTML","CSS","JS"],
+    { title:"Clube Atletismo de Marinha Grande", tags:[],
       img:"/assets/images/projects/dev/clube-atletismo-de-marinha-grande.webp",
-      demo:"https://www.catletismomg.pt", info:"/dev/camg" },
+      demo:"https://www.catletismomg.pt", info:"" },
   ];
 
   const photoData = [
@@ -239,7 +239,6 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
           </div>
           <div class="pf-dev-body">
             <h3 class="pf-dev-title">${p.title}</h3>
-            <p class="pf-dev-desc">${p.desc}</p>
             <div class="pf-dev-tags">${p.tags.map(t => `<span class="pf-dev-tag">${t}</span>`).join('')}</div>
             <div class="pf-dev-actions">
               ${p.info ? `<a href="${p.info}">${INFO_ICON} Info</a>` : ''}
