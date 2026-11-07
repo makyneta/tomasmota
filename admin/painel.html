@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#10110f">
+  <title>Dashboard — Makyneta</title>
+  <link rel="stylesheet" href="../assets/styles/admin.css">
+  <script src="../assets/scripts/admin-auth.js" defer></script>
+</head>
+<body class="dashboard-page" data-admin-protected>
+  <div id="auth-check" class="auth-check" role="status" aria-live="polite">Checking session…</div>
+
+  <div class="admin-app" hidden>
+    <header class="admin-header">
+      <a class="wordmark" href="../index.html" aria-label="Makyneta — página inicial">
+        <span class="wordmark-mark" aria-hidden="true">M</span>
+        <span>MAKYNETA<span class="wordmark-period">.</span></span>
+      </a>
+      <div class="header-right">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="header-label">ADMINISTRATION</span>
+        <button id="logout-button" class="button button-quiet" type="button">Sign out</button>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">CONTROL PANEL <span class="eyebrow-divider">/</span> OVERVIEW</p>
+          <h1>Dashboard<span class="wordmark-period">.</span></h1>
+          <p class="muted dashboard-intro">Your workspace at a glance.</p>
+        </div>
+        <span class="dashboard-date">MAKYNETA · PRIVATE WORKSPACE</span>
+      </div>
+
+      <section class="contact-section" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CONTACTS <span class="eyebrow-divider">/</span> PERSONAL</p>
+            <h2 id="contact-title">Contact profile</h2>
+          </div>
+          <span class="contact-count">01 PROFILE</span>
+        </div>
+
+        <article class="contact-card">
+          <div class="contact-person">
+            <div class="contact-photo" role="img" aria-label="Photo of Miguel Amaral">
+              <img class="contact-photo-image" src="../assets/images/miguel-amaral.webp" alt="Profile photo of Miguel Amaral">
+              <span class="photo-placeholder" aria-hidden="true" hidden>MA</span>
+              <span class="photo-caption">PHOTO</span>
+            </div>
+            <div class="contact-identity">
+              <span class="contact-role">PERSONAL CONTACT</span>
+              <h3>Miguel Amaral</h3>
+              <p>Contact details</p>
+            </div>
+          </div>
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="detail-label">EMAIL ADDRESS</span>
+              <span class="detail-value detail-empty">miguel.cunha.amaral@gmail.com</span>
+            </div>
+            <div class="contact-detail">
+              <span class="detail-label">PHONE NUMBER</span>
+              <span class="detail-value detail-empty">+351 933 625 500</span>
+            </div>
+            <div class="contact-detail">
+              <span class="detail-label">IBAN</span>
+              <span class="detail-value detail-empty">PT50 0033 0000 4573 5817 8700 5</span>
+            </div>
+            <div class="contact-detail">
+              <span class="detail-label">NIF</span>
+              <span class="detail-value detail-empty">303967935</span>
+            </div>
+            <div class="contact-detail">
+              <span class="detail-label">BIRTH DATE</span>
+              <span class="detail-value detail-empty">2006-03-21</span>
+            </div>
+          </div>
+        </article>
+        <p class="contact-note">Personal and banking details are not filled in. Add them only in a secure, access-controlled system.</p>
+      </section>
+    </main>
+    <footer class="admin-footer"><span>MAKYNETA</span><span>PRIVATE AREA</span></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#10110f">
+  <title>Admin login — Makyneta</title>
+  <link rel="stylesheet" href="../assets/styles/admin.css">
+  <script src="../assets/scripts/admin-auth.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-card" aria-labelledby="login-title">
+      <a class="wordmark" href="../index.html" aria-label="Makyneta — página inicial">
+        <span class="wordmark-mark" aria-hidden="true">M</span>
+        <span>MAKYNETA<span class="wordmark-period">.</span></span>
+      </a>
+
+      <div class="login-copy">
+        <p class="eyebrow">RESTRICTED AREA</p>
+        <h1 id="login-title">Welcome<br>back.</h1>
+        <p class="muted">Sign in to access the administration area.</p>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="username" placeholder="name@example.com" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required>
+
+        <p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+
+        <button id="login-button" class="button button-primary" type="submit">
+          <span>Sign in</span><span aria-hidden="true">↗</span>
+        </button>
+      </form>
+
+      <p class="security-note">Client-side access gate only. Do not use this for sensitive data: GitHub Pages cannot securely protect admin pages.</p>
+      <a class="back-link" href="../index.html">← Back to the website</a>
+    </section>
+
+    <aside class="login-aside" aria-label="Makyneta">
+      <div class="aside-grid" aria-hidden="true"></div>
+      <div class="aside-content">
+        <p class="eyebrow">MAKYNETA · LEIRIA, PORTUGAL</p>
+        <p class="aside-statement">Ideas with<br><span>intention.</span></p>
+        <p class="aside-caption">A workspace to create, manage, and make things happen.</p>
+      </div>
+      <span class="aside-index" aria-hidden="true">01 — 01</span>
+    </aside>
+  </main>
+</body>
+</html>
