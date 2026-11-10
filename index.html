@@ -146,6 +146,7 @@
   <link rel="stylesheet" href="/assets/styles/geral.css">
   <link rel="stylesheet" href="/assets/styles/home.css">
   <link rel="stylesheet" href="/assets/styles/home-new.css">
+  <link rel="stylesheet" href="/assets/styles/storm-notice.css">
   <link rel="stylesheet" href="/assets/styles/cookies.css">
   <link rel="stylesheet" href="/assets/styles/loading.css">
   
@@ -154,6 +155,7 @@
   <script src="/assets/scripts/blockhash.js"></script>
   <script src="/assets/scripts/home.js" defer></script>
   <script src="/assets/scripts/homenew.js" defer></script>
+  <script src="/assets/scripts/storm-notice.js" defer></script>
   <script src="/assets/scripts/script.js" defer></script>
   <script src="/assets/scripts/cookies.js" defer></script>
   <!-- <script src="/assets/scripts/loading.js" defer></script> -->
@@ -451,24 +453,28 @@
       </div>
     </section>
  
-    <!-- ══ POPUP ═══════════════════════════════════════════════════════ -->
-  <!-- <div id="cesario-popup" class="cesario-popup" role="dialog" aria-modal="true" aria-labelledby="cesario-popup-title" aria-hidden="true">
-    <div class="cesario-popup-card" role="document">
-      <button type="button" class="cesario-popup-close" aria-label="Fechar popup">&times;</button>
-      <div class="cesario-popup-content">
-        <span class="cesario-popup-kicker">Tomnás from <i>Makyneta Unipessoal, Lda.</i> wish you a</span><br>
-        <h2 id="cesario-popup-title">Happy Halloween</h2>
-      </div>
-    </div>
-  </div> -->
-
   </main>
 
 <div id="footer"></div>
 
-<script>
-
-</script>
+<dialog id="storm-notice" class="storm-notice" aria-labelledby="storm-notice-title" aria-describedby="storm-notice-description">
+  <div class="storm-notice-card">
+    <button class="storm-notice-close" type="button" aria-label="Fechar aviso / Close notice">&times;</button>
+    <p class="storm-notice-label">Service notice <span aria-hidden="true">/</span> Aviso de serviço</p>
+    <h2 id="storm-notice-title">Temporary suspension of project deliveries</h2>
+    <p id="storm-notice-description" class="storm-notice-copy" lang="en">
+      Due to Storm Charles, and to ensure everyone’s safety, project deliveries are suspended until 15 November.
+    </p>
+    <h3 lang="pt">Suspensão temporária das entregas de projetos</h3>
+    <p class="storm-notice-copy" lang="pt">
+      Devido à tempestade Charles, e para garantir a segurança de todos, as entregas de projetos estão suspensas até 15 de novembro.
+    </p>
+    <p class="storm-notice-contact">
+      Everyone can get in touch by phone or WhatsApp: <a href="tel:+351913936776">+351 913 936 776</a> · <a href="https://wa.me/351913936776">WhatsApp</a>.
+      <span lang="pt">Todos podem entrar em contacto por chamada ou WhatsApp: <a href="tel:+351913936776">+351 913 936 776</a> · <a href="https://wa.me/351913936776">WhatsApp</a>.</span>
+    </p>
+  </div>
+</dialog>
 
 <script>
 (function(){
