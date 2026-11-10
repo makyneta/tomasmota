@@ -87,18 +87,52 @@
   color: #f3f0e9;
 }
 
-.storm-notice-contact a {
-  color: #b7d58d;
-  font-weight: 600;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  white-space: nowrap;
+.storm-notice-contact p {
+  margin: 0;
+  color: #c1c4bd;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
-.storm-notice-contact span {
-  display: block;
-  margin-top: 5px;
-  color: #c1c4bd;
+.storm-notice-contact p + p {
+  margin-top: 4px;
+}
+
+.storm-notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.storm-notice-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid #b7d58d;
+  color: #101310;
+  background: #b7d58d;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.storm-notice-button:hover {
+  color: #101310;
+  background: #c9e6a1;
+}
+
+.storm-notice-button-secondary {
+  color: #b7d58d;
+  background: transparent;
+}
+
+.storm-notice-button-secondary:hover {
+  color: #101310;
+  background: #b7d58d;
 }
 
 @media (max-width: 480px) {
