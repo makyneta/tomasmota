@@ -5,7 +5,7 @@ var assessments = [
   
   { date: '2026-10-29', subject: 'FMAT', regime: 'TP2' },
   
-  { date: '2026-10-30', subject: 'FMAT', regime: 'TP1' }, */
+  { date: '2026-10-30', subject: 'FMAT', regime: 'TP1' }, 
   
   { date: '2026-10-30', subject: 'IAPSI', regime: 'EaD' }, 
   
@@ -25,7 +25,7 @@ var assessments = [
   
   { date: '2026-11-10', subject: 'COMTI', regime: 'TP1' },
   
-  { date: '2026-11-10', subject: 'IRSO', regime: 'TP' },
+  { date: '2026-11-10', subject: 'IRSO', regime: 'TP' },*/
   
   { date: '2026-11-13', subject: 'COMTI', regime: 'TP2' },
   
