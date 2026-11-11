@@ -12,7 +12,7 @@
   const RELEASES = [
     { title: "Golden", type: "Single", date: "2026-10-02",
     cover: "/assets/images/music/releases/golden.webp",
-    url: "/music/golden" },
+    url: "/release/golden" },
 
     // { title: "Nome do EP", type: "EP", date: "2026-12-20", cover: "/assets/images/releases/nome-do-ep.webp", url: "https://..." },
   ];
