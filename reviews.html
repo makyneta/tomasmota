@@ -1,136 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
-  <!-- Metadados -->
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex">
-  <title>Reviews | Makyneta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Makyneta Unipessoal, Lda.">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Partilha a tua experiência com a Makyneta e ajuda-nos a continuar a melhorar.">
+  <title>Deixa a tua review | Makyneta</title>
 
-  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles/geral.css">
   <link rel="stylesheet" href="/assets/styles/reviews.css">
-
-  <!-- Scripts -->
-  <script src="/assets/scripts/script.js"></script>
+  <script src="/assets/scripts/script.js" defer></script>
+  <script src="/assets/scripts/reviews.js" defer></script>
 </head>
+<body class="review-submission-page">
+  <div id="bar" aria-hidden="true"></div>
   <div id="header"></div>
-  <body>
-    <main class="page-shell">
-      <section class="card" aria-labelledby="reviews-title">
-        <header class="card-header">
-          <p class="eyebrow"><span class="dot"></span> v1.0</p>
-          <h1 id="reviews-title">Feedback de clientes</h1>
-          <p class="lead">
-            Escreve o teu <i>feedback</i> sobre o projeto que foi realizado pelo Tomás.
-          </p>
-        </header>
 
-        <div class="card-body">
-          <p id="form-success" class="success-message" hidden aria-live="polite">
-            Obrigado! O teu feedback foi enviado com sucesso.
-          </p>
+  <main class="review-page">
+    <section class="review-hero" aria-labelledby="review-title">
+      <div class="review-hero-copy">
+        <p class="review-eyebrow">Makyneta <span>//</span> A tua experiência</p>
+        <h1 class="review-title" id="review-title">O TEU FEEDBACK<br><span>FAZ A DIFERENÇA.</span></h1>
+        <p class="review-intro">
+          Trabalhámos juntos? Conta-nos como correu. A tua opinião ajuda-nos a melhorar
+          e ajuda outras pessoas a escolher com confiança.
+        </p>
+      </div>
+      <aside class="review-hero-note" aria-label="A importância da tua opinião">
+        <span class="review-note-mark" aria-hidden="true">“</span>
+        <p>Uma boa parceria merece ser contada.</p>
+        <span class="review-note-caption">Leva apenas alguns minutos</span>
+      </aside>
+    </section>
 
-          <form id="feedback-form" action="https://formspree.io/f/xvgbagja" method="POST">
-            <div class="grid">
-              <div class="field">
-                <label for="nome_feedback">Nome do cliente</label>
-                <input id="nome_feedback" name="nome_feedback" type="text" placeholder="O teu nome" required />
-              </div>
-
-              <div class="field">
-                <label for="projeto_feedback">Projeto / website realizado</label>
-                <input id="projeto_feedback" name="projeto_feedback" type="text" placeholder="Nome do projeto" required />
-              </div>
-
-              <div class="field">
-                <label for="avaliacao_feedback">Avaliação</label>
-                <div class="select-wrap">
-                  <select id="avaliacao_feedback" name="avaliacao_feedback" required>
-                    <option value="" selected disabled>Seleciona a tua avaliação</option>
-                    <option value="5">5 — excelente</option>
-                    <option value="4">4 — muito bom</option>
-                    <option value="3">3 — bom</option>
-                    <option value="2">2 — aceitável</option>
-                    <option value="1">1 — fraco</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="email_feedback">Email <span class="label-meta">(opcional)</span></label>
-                <input id="email_feedback" name="email_feedback" type="email" placeholder="seu@email.com" />
-              </div>
-
-              <div class="field full">
-                <label for="mensagem_feedback">Mensagem de feedback</label>
-                <textarea id="mensagem_feedback" name="mensagem_feedback" placeholder="Partilha como foi a experiência, o que correu bem e o que poderia melhorar..." required></textarea>
-              </div>
-            </div>
-
-            <div class="actions">
-              <div class="helper">
-              </div>
-              <button class="submit-btn" type="submit">&gt; enviar feedback</button>
-            </div>
-
-            <div class="footer-note">
-              <strong>Nota:</strong> o teu email é opcional e serve apenas para resposta ou contacto em caso de necessidade.
-            </div>
-          </form>
+    <section class="review-content" aria-label="Formulário de avaliação">
+      <div class="review-form-column">
+        <div class="review-section-heading">
+          <span class="review-step">01 / 01</span>
+          <h2>Partilha a tua experiência</h2>
         </div>
-      </section>
-    </main>
+
+        <p id="form-status" class="review-status" role="status" aria-live="polite" hidden></p>
+
+        <form class="review-form" id="feedback-form" action="https://formspree.io/f/xvgbagja" method="POST">
+          <div class="review-field-row">
+            <div class="review-field">
+              <label for="nome_feedback">O teu nome <span aria-hidden="true">*</span></label>
+              <input id="nome_feedback" name="nome_feedback" type="text" autocomplete="name" placeholder="Como te chamamos?" required>
+            </div>
+            <div class="review-field">
+              <label for="projeto_feedback">Projeto / serviço <span aria-hidden="true">*</span></label>
+              <input id="projeto_feedback" name="projeto_feedback" type="text" placeholder="Ex.: website, fotografia…" required>
+            </div>
+          </div>
+
+          <fieldset class="review-rating">
+            <legend>Avaliação <span aria-hidden="true">*</span></legend>
+            <div class="rating-options" role="radiogroup" aria-label="Escolhe uma avaliação de uma a cinco estrelas">
+              <input id="rating-5" name="avaliacao_feedback" type="radio" value="5" required>
+              <input id="rating-4" name="avaliacao_feedback" type="radio" value="4">
+              <input id="rating-3" name="avaliacao_feedback" type="radio" value="3">
+              <input id="rating-2" name="avaliacao_feedback" type="radio" value="2">
+              <input id="rating-1" name="avaliacao_feedback" type="radio" value="1">
+              <label for="rating-5" title="5 estrelas — Excelente"><span aria-hidden="true">★</span><span class="rating-value">5</span></label>
+              <label for="rating-4" title="4 estrelas — Muito bom"><span aria-hidden="true">★</span><span class="rating-value">4</span></label>
+              <label for="rating-3" title="3 estrelas — Bom"><span aria-hidden="true">★</span><span class="rating-value">3</span></label>
+              <label for="rating-2" title="2 estrelas — Aceitável"><span aria-hidden="true">★</span><span class="rating-value">2</span></label>
+              <label for="rating-1" title="1 estrela — Fraco"><span aria-hidden="true">★</span><span class="rating-value">1</span></label>
+            </div>
+            <p class="review-field-hint">De 1 (fraco) a 5 (excelente).</p>
+          </fieldset>
+
+          <div class="review-field">
+            <label for="mensagem_feedback">A tua mensagem <span aria-hidden="true">*</span></label>
+            <textarea id="mensagem_feedback" name="mensagem_feedback" rows="5" placeholder="Como foi trabalhar connosco? O que correu bem? O teu testemunho pode ser breve." required></textarea>
+          </div>
+
+          <div class="review-field">
+            <label for="email_feedback">Email <span aria-hidden="true">*</span></label>
+            <input id="email_feedback" name="email_feedback" type="email" autocomplete="email" placeholder="nome@exemplo.pt" required>
+            <p class="review-field-hint">Usado apenas se precisarmos de esclarecer algo sobre a tua avaliação.</p>
+          </div>
+
+          <div class="review-submit-row">
+            <p class="review-required-note"><span aria-hidden="true">*</span> Campos obrigatórios</p>
+            <button class="review-submit" type="submit">
+              <span>Enviar avaliação</span>
+              <span class="review-submit-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="review-privacy">
+          <span class="review-privacy-icon" aria-hidden="true">↳</span>
+          <p>O teu email não será publicado. O teu feedback poderá ser partilhado no site, sempre associado ao nome que indicaste.</p>
+        </div>
+      </div>
+
+      <aside class="review-sidebar">
+        <div class="review-sidebar-block">
+          <span class="review-sidebar-index">01 — SINCERIDADE</span>
+          <h3>A tua opinião, à tua maneira.</h3>
+          <p>Não precisas de escrever muito. Uma avaliação honesta sobre a tua experiência já nos é bastante útil.</p>
+        </div>
+        <div class="review-sidebar-block">
+          <span class="review-sidebar-index">02 — PRIVACIDADE</span>
+          <h3>Os teus dados estão protegidos.</h3>
+          <p>Pedimos apenas o necessário para identificar o projeto e compreender o teu feedback.</p>
+        </div>
+        <a class="review-testimonials-link" href="/feedback">
+          <span>Ver testemunhos de clientes</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </aside>
+    </section>
+  </main>
+
   <div id="footer"></div>
-
-    <script>
-      const form = document.getElementById('feedback-form');
-      const successMessage = document.getElementById('form-success');
-
-      if (form && successMessage) {
-        form.addEventListener('submit', async (event) => {
-          event.preventDefault();
-
-          const submitButton = form.querySelector('button[type="submit"]');
-          const originalText = submitButton ? submitButton.textContent : '> enviar feedback';
-
-          if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'A enviar...';
-          }
-
-          successMessage.classList.remove('error');
-
-          try {
-            const response = await fetch(form.action, {
-              method: form.method,
-              body: new FormData(form),
-              headers: {
-                Accept: 'application/json'
-              }
-            });
-
-            if (!response.ok) {
-              throw new Error('Falha ao enviar o feedback.');
-            }
-
-            form.reset();
-            form.style.display = 'none';
-            successMessage.hidden = false;
-            successMessage.textContent = 'Obrigado! O teu feedback foi enviado com sucesso.';
-          } catch (error) {
-            successMessage.hidden = false;
-            successMessage.textContent = 'Ocorreu um erro ao enviar o feedback. Tenta novamente.';
-            successMessage.classList.add('error');
-          } finally {
-            if (submitButton) {
-              submitButton.disabled = false;
-              submitButton.textContent = originalText;
-            }
-          }
-        });
-      }
-    </script>
-  </body>
+</body>
 </html>

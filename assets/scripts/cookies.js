@@ -19,34 +19,37 @@
     return false;
   }
 
-  // Cria o banner — terminal window
+  // Cria o banner de consentimento.
   function createBanner() {
     const banner = document.createElement('div');
     banner.id = 'cookie-banner';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.setAttribute('aria-label', 'Cookie preferences');
     banner.innerHTML = `
-      <div class="ck-bar">
-        <span class="ck-dot r"></span>
-        <span class="ck-dot y"></span>
-        <span class="ck-dot g"></span>
-        <span class="ck-title"><span class="ck-prompt">makyneta@</span>consent — cookies</span>
-      </div>
       <div class="ck-body">
-        <div class="ck-line"><span class="ck-prompt">$</span><span class="ck-cmd">cat ~/.config/makyneta/cookies.conf</span></div>
-        <div class="ck-comment"># config: cookie consent</div>
+        <div class="ck-heading">
+          <span class="ck-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.2 13A8.5 8.5 0 1 1 11 3.8 6.5 6.5 0 0 0 20.2 13Z"></path>
+              <path d="M8 10h.01M12 14h.01M7 15h.01"></path>
+            </svg>
+          </span>
+          <div>
+            <p class="ck-eyebrow">Privacy preferences</p>
+            <h2 class="ck-title">Your privacy matters</h2>
+          </div>
+        </div>
         <p class="ck-text">
-          This website uses cookies to improve your experience and analyze performance.
-            <span class="hl">Essential cookies are always active;</span> the others only with your authorization.
-          </p>
-        <a class="ck-link" href="legal/cookies-policy">&#8594; See cookie policy</a>
+          We use essential cookies to keep this website working. With your permission, analytics cookies help us understand how the site is used.
+        </p>
+        <a class="ck-link" href="/legal/cookies-policy"><span aria-hidden="true">&#8599;</span> Read our cookie policy</a>
       </div>
-      <div class="ck-status" id="cookie-status">
-        <span class="dot"></span> status: awaiting decision
+      <div class="ck-status" id="cookie-status" aria-live="polite">
+        <span class="dot"></span> Your choice is saved for 12 months
       </div>
       <div class="ck-actions">
-        <button id="cookie-reject" class="ck-btn reject">recuse</button>
-        <button id="cookie-accept" class="ck-btn accept">accept</button>
+        <button id="cookie-reject" class="ck-btn reject">Only essential</button>
+        <button id="cookie-accept" class="ck-btn accept">Accept all</button>
       </div>
     `;
     document.body.appendChild(banner);
@@ -54,7 +57,6 @@
     // Event listeners
     document.getElementById('cookie-accept').addEventListener('click', acceptCookies);
     document.getElementById('cookie-reject').addEventListener('click', rejectCookies);
-    document.getElementById('cookie-accept').focus();
   }
 
   // Regista a decisão do utilizador
@@ -64,7 +66,7 @@
     const status = document.getElementById('cookie-status');
     if (status) {
       status.classList.add('saved');
-      status.innerHTML = '<span class="dot"></span> estado: consentimento guardado';
+      status.innerHTML = '<span class="dot"></span> Your choice has been saved';
     }
 
     if (accepted) loadGoogleAnalytics();
