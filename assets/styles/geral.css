@@ -22,37 +22,4 @@ footer, #footer {
     flex-shrink: 0;
 }
 
-/* ── Custom Cursor ── */
-
-/* #cx {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  width: 7px;
-  height: 7px;
-  background: #ede9e2;
-  border-radius: 50%;
-  box-shadow: 0 0 14px rgba(237,233,226,0.5), 0 0 30px rgba(237,233,226,0.12);
-  transition: width 0.2s, height 0.2s, box-shadow 0.2s;
-}
-
-#ct1, #ct2, #ct3, #ct4, #ct5, #ct6 {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9997;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: rgba(237,233,226,0.9);
-} */
-
-/* Legacy ID compatibility */
-#cursor-dot, #cursor { position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); width: 7px; height: 7px; background: #ede9e2; border-radius: 50%; box-shadow: 0 0 14px rgba(237,233,226,0.5); }
-#cursor-ring { display: none; }
-
-@media (max-width: 768px) {
-  #cx, #ct1, #ct2, #ct3, #ct4, #ct5, #ct6, #cursor, #cursor-dot, #cursor-ring {
-    display: none !important;
-  }
-}
 
