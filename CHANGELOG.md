@@ -25,6 +25,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - Design mobile da página sobre melhorado
 
 ## [1.0.0] - 2024
+## [2.0.0] - 2026
 
 ### Added
 - Lançamento inicial do website

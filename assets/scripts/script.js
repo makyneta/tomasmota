@@ -3,9 +3,24 @@ document.querySelectorAll('.year').forEach(el => {
   el.textContent = new Date().getFullYear();
 });
 
+(function() {
+  if (!document.querySelector('link[href="/assets/styles/cookies.css"]')) {
+    const cookieStyles = document.createElement('link');
+    cookieStyles.rel = 'stylesheet';
+    cookieStyles.href = '/assets/styles/cookies.css';
+    document.head.appendChild(cookieStyles);
+  }
+
+  if (!document.querySelector('script[src="/assets/scripts/cookies.js"]')) {
+    const cookieConsent = document.createElement('script');
+    cookieConsent.src = '/assets/scripts/cookies.js';
+    document.head.appendChild(cookieConsent);
+  }
+})();
+
 var v = Date.now();
 
-fetch("/assets/ui/header/english.html?v=" + v)
+fetch("/assets/ui/header/main.html?v=" + v)
   .then(function(r) { return r.text(); })
   .then(function(data) {
     document.getElementById("header").innerHTML = data;
@@ -93,7 +108,7 @@ fetch("/assets/ui/header/english.html?v=" + v)
 
 //
 // Footer
-fetch("/assets/ui/footer/english.html?v=" + v)
+fetch("/assets/ui/footer/main.html?v=" + v)
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;

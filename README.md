@@ -6,7 +6,7 @@
 
 <p align="center">
   <em>Life, Uncomplicated.</em><br>
-  Website pessoal de Tomás Mota — programador fullstack, fotógrafo, designer e roadie.
+  Website pessoal de Tomás Mota — programador fullstack, fotógrafo e roadie.
 </p>
 
 <p align="center">
@@ -24,7 +24,6 @@ Este repositório contém o código fonte do website pessoal da **Makyneta Unipe
 
 - Desenvolvimento Web Fullstack
 - Fotografia de eventos, desporto e retrato
-- Design Gráfico e Identidade Visual
 - Suporte Informático e Infraestrutura
 - Produção de Áudio e Eventos Ao Vivo
 - Produção de Vídeo

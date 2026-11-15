@@ -1,0 +1,70 @@
+<header id="main-header">
+  <a href="/" class="header-logo">
+    <img src="/assets/images/ui/header.webp" alt="Makyneta" class="header-logo-img">
+  </a>
+
+  <nav class="header-nav">
+    <a href="/#about" class="nav-link">Sobre</a>
+
+    <div class="dropdown-wrapper">
+      <button class="nav-btn">
+        Portefólio
+        <i class="fa-solid fa-chevron-down" style="font-size:.4rem;opacity:.5"></i>
+      </button>
+      <div class="dropdown-menu">
+        <a href="/web-development"><i class="fa-solid fa-code"></i> Desenvolvimento Web</a>
+        <a href="/photography"><i class="fa-solid fa-camera"></i> Fotografia</a>
+      </div>
+    </div>
+
+    <a href="/#home-contact" class="nav-link">Contacto</a>
+  </nav>
+
+  <button id="mobile-menu-toggle-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <script>
+    (function(){
+      var path = window.location.pathname;
+      document.querySelectorAll('#main-header .nav-link').forEach(function(el){
+        if (el.getAttribute('href') === path) el.classList.add('active');
+      });
+      var btns = document.querySelectorAll('#main-header .nav-btn');
+      if (path.match(/^\/(develop|photo|video|interviews|feedback)/)) {
+        if (btns[0]) btns[0].classList.add('active');
+      }
+      document.querySelectorAll('#mobile-menu .mm-link').forEach(function(el){
+        if (el.getAttribute('href') === path) el.classList.add('active');
+      });
+    })();
+  </script>
+</header>
+
+<div id="mobile-menu" aria-hidden="true">
+  <div class="mm-window">
+    <div class="mm-body">
+      <div class="mm-heading">
+        <p class="mm-eyebrow">Explorar Makyneta</p>
+        <span class="mm-heading-index">MENU <span>01</span></span>
+      </div>
+      <nav aria-label="Navegação móvel">
+        <ul class="mm-list">
+          <li><a href="/" class="mm-link"><span class="mm-number">01</span><span class="mm-name">Início</span><span class="mm-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="/#about" class="mm-link"><span class="mm-number">02</span><span class="mm-name">Sobre</span><span class="mm-arrow" aria-hidden="true">↗</span></a></li>
+          <li class="mm-sep" aria-hidden="true"><span>Portefólio</span></li>
+          <li><a href="/web-development" class="mm-link"><span class="mm-number">03</span><span class="mm-name">Desenvolvimento Web</span><span class="mm-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="/photography" class="mm-link"><span class="mm-number">04</span><span class="mm-name">Fotografia</span><span class="mm-arrow" aria-hidden="true">↗</span></a></li>
+          <li class="mm-sep" aria-hidden="true"><span>Contacto</span></li>
+          <li><a href="/#home-contact" class="mm-link"><span class="mm-number">07</span><span class="mm-name">Contacto</span><span class="mm-arrow" aria-hidden="true">↗</span></a></li>
+        </ul>
+      </nav>
+      <div class="mm-footer">
+        <span>Estúdio criativo independente</span>
+        <span>Leiria, Portugal</span>
+      </div>
+    </div>
+  </div>
+</div>

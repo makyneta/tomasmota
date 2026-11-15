@@ -12,7 +12,7 @@
   z-index: 9999;
   right: 2rem;
   bottom: 2rem;
-  width: min(440px, calc(100vw - 2rem));
+  width: min(360px, calc(100vw - 2rem));
   overflow: hidden;
   border: 1px solid var(--ck-line);
   background: var(--ck-bg);
@@ -35,21 +35,21 @@
 }
 
 .ck-body {
-  padding: 1.5rem 1.5rem 1.35rem;
+  padding: 1.1rem 1.1rem .95rem;
 }
 
 .ck-heading {
   display: flex;
   align-items: center;
-  gap: .75rem;
-  margin-bottom: 1.1rem;
+  gap: .65rem;
+  margin-bottom: .8rem;
 }
 
 .ck-icon {
   display: grid;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
   place-items: center;
   border: 1px solid rgba(183, 213, 141, .25);
   color: var(--ck-accent);
@@ -72,7 +72,7 @@
 
 .ck-title {
   margin: 0;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 500;
   letter-spacing: -.02em;
 }
@@ -80,15 +80,15 @@
 .ck-text {
   margin: 0;
   color: #c1c4bd;
-  font-size: 13px;
-  line-height: 1.75;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .ck-link {
   display: inline-flex;
   align-items: center;
   gap: .45rem;
-  margin-top: 1rem;
+  margin-top: .75rem;
   color: var(--ck-accent);
   font: 10px "Fira Code", monospace;
   letter-spacing: .04em;
@@ -107,8 +107,8 @@
   display: flex;
   align-items: center;
   gap: .55rem;
-  min-height: 37px;
-  padding: 0 1.5rem;
+  min-height: 31px;
+  padding: 0 1.1rem;
   border-top: 1px solid var(--ck-line);
 }
 
@@ -125,13 +125,13 @@
 .ck-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 1rem 1.5rem 1.5rem;
+  gap: 8px;
+  padding: .75rem 1.1rem 1.1rem;
 }
 
 .ck-btn {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 38px;
   align-items: center;
   justify-content: center;
   padding: .65rem .8rem;
@@ -170,9 +170,9 @@
     width: auto;
   }
 
-  .ck-body { padding: 1.25rem 1.25rem 1.1rem; }
-  .ck-status { padding: 0 1.25rem; }
-  .ck-actions { padding: .85rem 1.25rem 1.25rem; }
+  .ck-body { padding: 1rem 1rem .85rem; }
+  .ck-status { padding: 0 1rem; }
+  .ck-actions { padding: .7rem 1rem 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

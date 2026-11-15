@@ -1,41 +1,5 @@
 (function () {
-  const reviews = [
-    {
-      name: 'Esdras Lopes',
-      role: 'Programmer & Musician',
-      rating: 5,
-      image: '/assets/images/clients/esdras-lopes.webp',
-      quote: 'Very good, it was done in just a few hours and turned out really well.'
-    },
-    {
-      name: 'Victor Campos',
-      role: 'Influencer',
-      rating: 5,
-      image: '/assets/images/clients/victor-campos.webp',
-      quote: 'Impeccable and extremely practical work, I trust it and recommend it!'
-    },
-    {
-      name: 'Nicholas Moraes',
-      role: 'Influencer & Musician',
-      rating: 5,
-      image: '/assets/images/clients/nicholas-moraes.webp',
-      quote: 'Tomás made a very good job, beautiful, fast delivery and modern design on the site. He put all the correct information and left everything very well structured. I loved it!'
-    },
-    {
-      name: 'Nicholas Simões',
-      role: 'Photographer',
-      rating: 5,
-      image: '/assets/images/clients/nicholas-simoes.webp',
-      quote: "Tomás, it's incredible!!! I had already imagined you were a really professional based on what you had shown of your website and your work. But I have no words to thank you. Thank you so much for the care and thank you so much for the opportunity. What you did for me is already going to be a difference and so much for my future work! I hope that in the future we have the opportunity to collaborate again, and this time I can repay you for this incredible work you did for me."
-    },
-    {
-      name: 'Gabriel Sousa',
-      role: 'Photographer',
-      rating: 4,
-      image: '/assets/images/clients/gabriel-sousa.webp',
-      quote: "Tomás I loved the website it's on Instagram as a link and I'm just waiting for the account to grow so I can start doing what I want and I thank you for making this website."
-    }
-  ];
+  const reviews = window.MakynetaTestimonials;
 
   const grid = document.getElementById('feedback-grid');
   const count = document.getElementById('feedback-count');
@@ -43,6 +7,11 @@
   const summaryCopy = document.getElementById('feedback-summary-copy');
 
   if (!grid || !count || !average || !summaryCopy) return;
+  if (!Array.isArray(reviews) || reviews.length === 0) {
+    console.error('Client testimonials could not be loaded.');
+    grid.setAttribute('aria-busy', 'false');
+    return;
+  }
 
   const star = '\u2605';
   const averageRating = reviews.reduce((total, review) => total + review.rating, 0) / reviews.length;

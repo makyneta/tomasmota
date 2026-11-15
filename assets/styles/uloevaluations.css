@@ -162,7 +162,7 @@ td select option { background: var(--surface); color: var(--text); }
 
 @media print {
   body:has(.planner), .planner { background: #fff !important; color: #111 !important; }
-  #header, #footer, #progress, .noise, .heading-actions, .sheet-actions, .remove-column, .remove-row, .page-note { display: none !important; }
+  #header, #footer, .noise, .heading-actions, .sheet-actions, .remove-column, .remove-row, .page-note { display: none !important; }
   .planner { width: 100%; min-height: 0; padding: 0; }
   .planner, .planner[data-theme="light"] { --surface: #fff; --surface-raised: #f1f1f1; --border: #ccc; --text: #111; --muted: #555; --accent: #167844; --input: #fff; }
   .sheet { border-color: #aaa; }

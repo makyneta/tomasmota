@@ -1,22 +1,17 @@
 (function() {
   const COOKIE_NAME = 'makyneta_cookies_accepted';
-  const COOKIE_EXPIRY = 365; // dias
+  const COOKIE_EXPIRY = 180; // dias
+  const GA_MEASUREMENT_ID = 'G-JBSGBCL6R5';
+  const GTM_CONTAINER_ID = 'GTM-KMC9L3R8';
+  const isPortuguese = document.documentElement.lang.toLowerCase().startsWith('pt');
+  let analyticsLoaded = false;
 
-  // Verifica se o user já aceitou (melhoria)
-  function hasCookieConsent() {
-    const cookieString = document.cookie;
-    const name = COOKIE_NAME + '=';
-    const decodedCookie = decodeURIComponent(cookieString);
-    const cookieArray = decodedCookie.split(';');
-    
-    for(let i = 0; i < cookieArray.length; i++) {
-      let cookie = cookieArray[i].trim();
-      if (cookie.indexOf(name) === 0) {
-        const value = cookie.substring(name.length, cookie.length);
-        return value === 'true';
-      }
-    }
-    return false;
+  function getCookieConsent() {
+    const cookie = document.cookie.split(';').map(value => value.trim())
+      .find(value => value.indexOf(COOKIE_NAME + '=') === 0);
+
+    if (!cookie) return null;
+    return cookie.substring(COOKIE_NAME.length + 1) === 'true';
   }
 
   // Cria o banner de consentimento.
@@ -24,7 +19,7 @@
     const banner = document.createElement('div');
     banner.id = 'cookie-banner';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookie preferences');
+    banner.setAttribute('aria-label', isPortuguese ? 'Preferências de cookies' : 'Cookie preferences');
     banner.innerHTML = `
       <div class="ck-body">
         <div class="ck-heading">
@@ -35,21 +30,21 @@
             </svg>
           </span>
           <div>
-            <p class="ck-eyebrow">Privacy preferences</p>
-            <h2 class="ck-title">Your privacy matters</h2>
+            <p class="ck-eyebrow">${isPortuguese ? 'Preferências de privacidade' : 'Privacy preferences'}</p>
+            <h2 class="ck-title">${isPortuguese ? 'A sua privacidade importa' : 'Your privacy matters'}</h2>
           </div>
         </div>
         <p class="ck-text">
-          We use essential cookies to keep this website working. With your permission, analytics cookies help us understand how the site is used.
+          ${isPortuguese ? 'Utilizamos cookies essenciais para manter este site a funcionar. Com a sua autorização, os cookies analíticos ajudam-nos a compreender como o site é utilizado.' : 'We use essential cookies to keep this website working. With your permission, analytics cookies help us understand how the site is used.'}
         </p>
-        <a class="ck-link" href="/legal/cookies-policy"><span aria-hidden="true">&#8599;</span> Read our cookie policy</a>
+        <a class="ck-link" href="/legal/cookies-policy"><span aria-hidden="true">&#8599;</span> ${isPortuguese ? 'Consulte a nossa política de cookies' : 'Read our cookie policy'}</a>
       </div>
       <div class="ck-status" id="cookie-status" aria-live="polite">
-        <span class="dot"></span> Your choice is saved for 12 months
+        <span class="dot"></span> ${isPortuguese ? 'A sua escolha fica guardada durante 6 meses' : 'Your choice is saved for 6 months'}
       </div>
       <div class="ck-actions">
-        <button id="cookie-reject" class="ck-btn reject">Only essential</button>
-        <button id="cookie-accept" class="ck-btn accept">Accept all</button>
+        <button id="cookie-reject" class="ck-btn reject">${isPortuguese ? 'Apenas essenciais' : 'Only essential'}</button>
+        <button id="cookie-accept" class="ck-btn accept">${isPortuguese ? 'Aceitar todos' : 'Accept all'}</button>
       </div>
     `;
     document.body.appendChild(banner);
@@ -66,10 +61,10 @@
     const status = document.getElementById('cookie-status');
     if (status) {
       status.classList.add('saved');
-      status.innerHTML = '<span class="dot"></span> Your choice has been saved';
+      status.innerHTML = '<span class="dot"></span> ' + (isPortuguese ? 'A sua escolha foi guardada' : 'Your choice has been saved');
     }
 
-    if (accepted) loadGoogleAnalytics();
+    if (accepted) initializeAnalytics();
     setTimeout(removeBanner, 700);
   }
 
@@ -101,32 +96,44 @@
     }
   }
 
-  // Carrega Google Analytics
-  function loadGoogleAnalytics() {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-YOUR_MEASUREMENT_ID';
-    document.head.appendChild(script);
+  // Carrega Google Analytics e Google Tag Manager
+  function initializeAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
 
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-YOUR_MEASUREMENT_ID', {
-      'anonymize_ip': true,
-      'allow_google_signals': false,
-      'allow_ad_personalization_signals': false
+    window.gtag = function() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
     });
+
+    window.dataLayer.push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(gaScript);
+
+    const gtmScript = document.createElement('script');
+    gtmScript.async = true;
+    gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_CONTAINER_ID;
+    document.head.appendChild(gtmScript);
   }
 
   // Inicia na página com verificação melhorada
   function init() {
-    if (hasCookieConsent()) {
-      // Cookie já existe e é 'true', carrega GA
-      loadGoogleAnalytics();
-    } else {
-      // Cookie não existe ou é 'false', mostra banner
+    const consent = getCookieConsent();
+    if (consent === true) {
+      initializeAnalytics();
+    } else if (consent === null) {
       createBanner();
     }
   }

@@ -1,9 +1,3 @@
-      window.addEventListener('scroll', () => {
-        const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-        document.getElementById('progress').style.width = Math.min(pct, 100) + '%';
-      });
-  
-
       const obs = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
       }, { threshold: 0.06 });

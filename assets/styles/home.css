@@ -357,11 +357,6 @@
       border-top: 1px solid var(--brd);
       border-bottom: 1px solid var(--brd);
     }
-    #portfolio-showcase::before {
-      content: ''; position: absolute; top: 0; left: 6rem;
-      width: min(18rem, 32vw); height: 1px;
-      background: linear-gradient(90deg, var(--grn), transparent);
-    }
     .pf-intro, .pf-categories {
       width: min(100%, 1440px); margin-inline: auto;
     }
@@ -525,56 +520,56 @@
     }
     .pf-dev-actions a svg { width: 10px; height: 10px; flex-shrink: 0; }
 
-    /* ── Photo & Design card (gallery label) ── */
-    .pf-card-design {
+    /* ── Photo card (gallery label) ── */
+    .pf-card-media {
       background: var(--bg2); overflow: hidden;
       border: 1px solid var(--brd);
       transition: border-color .4s;
     }
-    .pf-card-design:hover { border-color: rgba(0,255,136,.2); }
+    .pf-card-media:hover { border-color: rgba(0,255,136,.2); }
 
-    .pf-design-img {
+    .pf-media-img {
       aspect-ratio: 4/3; overflow: hidden; position: relative;
       background: var(--bg3);
     }
-    .pf-design-img img {
+    .pf-media-img img {
       width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform .9s cubic-bezier(.2,.8,.2,1);
     }
-    .pf-card-design:hover .pf-design-img img { transform: scale(1.05); }
+    .pf-card-media:hover .pf-media-img img { transform: scale(1.05); }
 
-    .pf-design-label {
+    .pf-media-label {
       padding: 1rem 1.2rem 1.2rem;
       border-top: 1px solid var(--brd);
     }
-    .pf-design-cat {
+    .pf-media-cat {
       font-family: var(--fm); font-size: .38rem;
       letter-spacing: .25em; text-transform: uppercase; color: var(--dim2);
       display: block; margin-bottom: .2rem;
     }
-    .pf-design-title {
+    .pf-media-title {
       font-family: var(--fd); font-size: 1.1rem;
       letter-spacing: .04em; color: var(--white); line-height: 1;
       margin: 0; transition: color .3s;
     }
-    .pf-card-design:hover .pf-design-title { color: var(--grn); }
+    .pf-card-media:hover .pf-media-title { color: var(--grn); }
 
-    .pf-design-actions {
+    .pf-media-actions {
       display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem;
     }
-    .pfd-btn {
+    .pfm-btn {
       display: inline-flex; align-items: center; gap: .4rem;
       font-family: var(--fm); font-size: .42rem;
       letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
       color: var(--grn); padding: .45rem .9rem;
       border: 1px solid rgba(0,255,136,.3);
-      background: transparent; cursor: pointer;
+      background: transparent;
       transition: background .3s, color .3s, border-color .3s;
     }
-    .pfd-btn:hover {
+    .pfm-btn:hover {
       background: var(--grn); color: #000; border-color: var(--grn);
     }
-    .pfd-btn svg { width: 10px; height: 10px; flex-shrink: 0; }
+    .pfm-btn svg { width: 10px; height: 10px; flex-shrink: 0; }
 
     /* =========================================================
        DISCIPLINES
@@ -686,44 +681,6 @@
     .disc-grid .disc-card:nth-child(5) { transition-delay: .12s; }
     .disc-grid .disc-card:nth-child(6) { transition-delay: .19s; }
  
-    /* =========================================================
-       LIGHTBOX
-    ========================================================= */
-    .lightbox {
-      position: fixed; inset: 0; z-index: 10000;
-      display: flex; align-items: center; justify-content: center;
-      padding: 2rem;
-      background: rgba(5,7,9,.93);
-      backdrop-filter: blur(6px);
-      opacity: 0; visibility: hidden;
-      transition: opacity .35s ease, visibility .35s ease;
-    }
-    .lightbox.open { opacity: 1; visibility: visible; }
-    .lb-fig {
-      margin: 0; max-width: min(1200px, 92vw); max-height: 88vh;
-      display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
-    }
-    .lb-fig img {
-      max-width: 100%; max-height: 78vh;
-      border: 1px solid var(--brd);
-      box-shadow: 0 30px 80px rgba(0,0,0,.65), 0 0 40px rgba(0,255,136,.05);
-    }
-    .lb-cap {
-      font-family: var(--fmh); font-size: .55rem; font-weight: 400;
-      letter-spacing: .22em; text-transform: uppercase;
-      color: var(--dim); text-align: center;
-    }
-    .lb-cap::before { content: '~/galeria/ '; color: var(--grn); }
-    .lb-close {
-      position: absolute; top: 1.4rem; right: 1.6rem;
-      width: 44px; height: 44px;
-      display: flex; align-items: center; justify-content: center;
-      background: none; border: 1px solid var(--brd);
-      color: var(--grn); font-size: 1.5rem; line-height: 1; cursor: pointer;
-      transition: background .3s, color .3s, border-color .3s;
-    }
-    .lb-close:hover { background: var(--grn); color: #000; border-color: var(--grn); }
-
     /* =========================================================
        CESARIO MESSAGE POPUP
     ========================================================= */

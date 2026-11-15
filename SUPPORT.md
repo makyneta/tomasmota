@@ -22,7 +22,7 @@ Não. Este é um repositório pessoal com código fonte público para referênci
 
 ### Posso contratar serviços da Makyneta?
 
-Sim. Contacta através de qualquer um dos canais acima ou pela página de [contacto](https://makyneta.github.io/contacto).
+Sim. Contacta através de qualquer um dos canais acima ou pela página de [contacto](https://makyneta.github.io/#home-contact).
 
 ### O site tem downtime programado?
 
