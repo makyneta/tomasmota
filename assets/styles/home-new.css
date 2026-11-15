@@ -205,8 +205,10 @@
       transition: opacity .2s ease;
     }
     #client-strip .client-strip-group li:hover .client-logo { opacity: 1; }
-    #client-strip .client-strip-viewport:hover .client-strip-track {
-      animation-play-state: paused;
+    @media (hover: hover) {
+      #client-strip .client-strip-viewport:hover .client-strip-track {
+        animation-play-state: paused;
+      }
     }
     @keyframes client-strip-scroll {
       to { transform: translateX(-50%); }
