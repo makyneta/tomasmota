@@ -109,6 +109,7 @@
     #hero .mk-visual-live { display: inline-flex; align-items: center; gap: 7px; color: #b7d58d; font: 10px "Fira Code", monospace; }
     #hero .mk-visual-live::before { width: 6px; height: 6px; border-radius: 50%; background: currentColor; content: ""; }
     #hero .mk-visual-image { position: relative; display: grid; min-height: 255px; place-items: center; overflow: hidden; background: #b7d58d; }
+    #hero .mk-visual-img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
     #hero .mk-visual-image::before, #hero .mk-visual-image::after { position: absolute; border: 1px solid rgba(16,19,16,.22); border-radius: 50%; content: ""; }
     #hero .mk-visual-image::before { width: 270px; aspect-ratio: 1; }
     #hero .mk-visual-image::after { width: 190px; aspect-ratio: 1; }
