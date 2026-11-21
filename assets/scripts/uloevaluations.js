@@ -39,13 +39,13 @@ var assessments = [
   
   { date: '2026-11-17', subject: 'COMTI', regime: 'EaD' },
   
-  { date: '2026-11-19', subject: 'FMAT', regime: 'TP2' }, */
+  { date: '2026-11-19', subject: 'FMAT', regime: 'TP2' },
   
   { date: '2026-11-20', subject: 'COMTI', regime: 'TP2' },
   
   { date: '2026-11-20', subject: 'FMAT', regime: 'TP1' },
   
-  { date: '2026-11-24', subject: 'COMTI', regime: 'TP1' },
+  { date: '2026-11-24', subject: 'COMTI', regime: 'TP1' }, */
   
   { date: '2026-11-27', subject: 'COMTI', regime: 'TP2' },
   
